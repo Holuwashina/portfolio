@@ -3,7 +3,7 @@ import { Grid, Typography, Card, CardContent, CardMedia, CardActionArea, Divider
 import { useTheme } from "@mui/styles";
 
 
-function Services({ serviceCard, heading, handleClick, children }) {
+function Services({ serviceCard, heading, children }) {
 
   const theme = useTheme()
   const matches = useMediaQuery(theme.breakpoints.up('xs'))
@@ -19,7 +19,7 @@ function Services({ serviceCard, heading, handleClick, children }) {
           return (
             <Grid key={card.id} item xs={6} sm={4}>
               <Card raised sx={{ maxWidth: 350, minWidth: 100 }}>
-                <CardActionArea onClick={handleClick}>
+                <CardActionArea>
                   <CardMedia
                     sx={{ objectFit: "fill" }}
                     component="img"

@@ -13,7 +13,6 @@ function MyApp({ Component, pageProps }) {
         <title>Portfolio</title>
         <meta name="description" content="Zhine portfolio" />
         <link rel="icon" href="/favicon.ico" />
-        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
       </Head>
 
       <ThemeProvider theme={theme} >

@@ -28,21 +28,20 @@ export default function Home() {
 
 const { serviceCard, heading, btn } = ServicesData;
 
-const [open, setOpen] = React.useState(false);
+// const [open, setOpen] = React.useState(false);
 
-const handleClickOpen = () => {
-  setOpen(true);
-};
-const handleClose = () => {
-  setOpen(false);
-};
+// const handleClickOpen = () => {
+//   setOpen(true);
+// };
+// const handleClose = () => {
+//   setOpen(false);
+// };
 
 
   return (
     <>
       <Hero />
 			<Services
-				handleClick={handleClickOpen}
 				heading={heading}
 				btn={btn}
 				serviceCard={serviceCard}

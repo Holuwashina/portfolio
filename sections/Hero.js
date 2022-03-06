@@ -82,13 +82,7 @@ function Hero() {
       <Grid item xs={12} md={5}>
         <Stack direction='row' spacing={2}>
           {
-            codes.map((basic) => {
-              return (
-                <Typography key={basic} variant='body2'>
-                  {basic}
-                </Typography>
-              )
-            })
+            codes.map((basic) => <Typography key={basic} variant='body2'>{basic}</Typography>)
           }
         </Stack>
         <HomeWidget heading={title} percentage={level} />
@@ -99,9 +93,7 @@ function Hero() {
                 <HomeWidget key={program.id} heading={program.title} percentage={program.level}>
                   <Stack direction='row' spacing={1}>
                     {
-                      program.codes.map((code) => {
-                        return <Typography key={code} variant='body2'>{code}</Typography>
-                      })
+                      program.codes.map((code) => <Typography key={code} variant='body2'>{code}</Typography>)
                     }
                   </Stack>
                   <Divider />
