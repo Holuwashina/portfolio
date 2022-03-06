@@ -89,7 +89,7 @@ function Footer() {
 				{about ? (
 					<TextMobileStepper />
 				) : (
-					<Image src={sideImage} width={300} height={200} priority />
+					<Image src={sideImage} alt="" width={300} height={200} priority />
 				)}
 			</Box>
 
