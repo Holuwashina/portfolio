@@ -7,7 +7,7 @@ const LinkWidget = (props) => {
    const {children, name, path} = props
     return (
         <>
-            <Link href={path}>
+            {/* <Link href={path}>
                 <Box sx={{ textAlign: 'center' }}>
                     <IconButton color="inherit" size='small'>
                         {children}
@@ -16,7 +16,7 @@ const LinkWidget = (props) => {
                         {name}
                     </Typography>
                 </Box>
-            </Link>
+            </Link> */}
         </>
     )
 }
