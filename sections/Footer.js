@@ -1,5 +1,5 @@
 import * as React from "react";
-import Image from "next/Image";
+import Image from "next/image";
 import Link from "next/link";
 import { useTheme } from "@mui/material/styles";
 import { Container, Box, Divider, Typography, Paper, IconButton, Stack, Button, Fade, MobileStepper } from "@mui/material";
