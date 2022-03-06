@@ -1,4 +1,3 @@
-import * as React from "react";
 import Link from 'next/link';
 import { useTheme } from "@mui/styles";
 import { Grid, Typography, Button, Stack, Divider, IconButton, useMediaQuery } from '@mui/material';
@@ -8,7 +7,7 @@ function Hero() {
 
  const HeroData= {
     heading: "Hire Me",
-    text: `I'm OLUWASHINA, a creative, skilled and experienced Web and Mobile application developer   from NIGERIA. I design and develop Front-end and implement Back-end using JAVASCRIPT and cutting edge technologies.`,
+    text: `I'm OLUWASHINA, a creative, skilled and experienced Web and Mobile application developer from NIGERIA. I design and develop Front-end and implement Back-end using JAVASCRIPT and cutting edge technologies.`,
     btn: "RESUME",
     link: "resume",
 

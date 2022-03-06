@@ -1,4 +1,3 @@
-import * as React from "react";
 import Hero from "../sections/Hero";
 import Services from "../sections/Services";
 
@@ -27,16 +26,6 @@ export default function Home() {
 }
 
 const { serviceCard, heading, btn } = ServicesData;
-
-// const [open, setOpen] = React.useState(false);
-
-// const handleClickOpen = () => {
-//   setOpen(true);
-// };
-// const handleClose = () => {
-//   setOpen(false);
-// };
-
 
   return (
     <>
