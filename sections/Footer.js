@@ -1,6 +1,5 @@
 import * as React from "react";
 import Image from "next/image";
-import Link from "next/link";
 import { useTheme } from "@mui/material/styles";
 import { Container, Box, Divider, Typography, Paper, IconButton, Stack, Button, Fade, MobileStepper } from "@mui/material";
 import { KeyboardArrowLeft, KeyboardArrowRight } from "@mui/icons-material";
@@ -29,37 +28,37 @@ function Footer() {
 		contactIcons: [
 			{
 				icon: <RiMessengerLine />,
-				link: "www.google.com"
+				link: "https://www.google.com"
 			},
 			{
 				icon: <RiTwitterLine />,
-				link: "www.google.com"
+				link: "https://www.google.com"
 			},
 			{
 				icon: <RiWhatsappLine />,
-				link: "www.google.com"
+				link: "https://www.google.com"
 			},
 			{
 				icon: <AiOutlineLinkedin />,
-				link: "www.google.com"
+				link: "https://www.google.com"
 			}
 		],
 		followIcons: [
 			{
 				icon: <RiGithubLine />,
-				link: "www.google.com"
+				link: "https://www.google.com"
 			},
 			{
 				icon: <AiOutlineLinkedin />,
-				link: "www.google.com"
+				link: "https://www.google.com"
 			},
 			{
 				icon: <RiTwitterLine />,
-				link: "www.google.com"
+				link: "https://www.google.com"
 			},
 			{
 				icon: <RiFacebookCircleLine />,
-				link: "www.google.com"
+				link: "https://www.google.com"
 			}
 		],
 		footerBtn: [
@@ -95,14 +94,15 @@ function Footer() {
 
 			<Stack direction="row" spacing={1} justifyContent="center" sx={{ mb: 2 }}>
 				{footerBtn.map((btn) => (
-					<Button
-						key={btn.id}
-						id={btn.id}
-						onClick={btn.handler}
-						variant="contained"
-					>
-						{btn.btnText}
-					</Button>
+					<React.Fragment key={btn.id}>
+						<Button
+							id={btn.id}
+							onClick={btn.handler}
+							variant="contained"
+						>
+							{btn.btnText}
+						</Button>
+					</React.Fragment>
 				))}
 			</Stack>
 
@@ -111,21 +111,25 @@ function Footer() {
 					<Stack direction="row" spacing={1} justifyContent="center">
 						{id === "contact" && contactIcons.map((contact) => {
 							return (
-								<Link key={contact.icon} href={contact.link}>
-									<IconButton size="small" color="primary">
-										{contact.icon}
-									</IconButton>
-								</Link>
+								<React.Fragment key={contact.icon}>
+									<a href={contact.link} target="_blank" rel="noopener noreferrer">
+										<IconButton size="small" color="primary">
+											{contact.icon}
+										</IconButton>
+									</a>
+								</React.Fragment>
 							)
 						})
 						}
 						{id === "connect" && followIcons.map((follow) => {
 							return (
-								<Link key={contact.icon} href={follow.link}>
-									<IconButton size="small" color="primary">
-										{follow.icon}
-									</IconButton>
-								</Link>
+								<React.Fragment key={follow.icon}>
+									<a href={follow.link} target="_blank" rel="noopener noreferrer">
+										<IconButton size="small" color="primary">
+											{follow.icon}
+										</IconButton>
+									</a>
+								</React.Fragment>
 							)
 						})
 						}

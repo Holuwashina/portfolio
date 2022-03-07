@@ -1,6 +1,6 @@
 import { createTheme } from "@mui/material/styles"
 import "@fontsource/alex-brush"
-// import "@fontsource/roboto"
+import "@fontsource/roboto"
 import "@fontsource/leckerli-one"
 import "@fontsource/assistant"
 
@@ -37,7 +37,7 @@ theme = createTheme(theme, {
             // fontWeight: 200
         },
         body1: {
-            fontFamily: "assistant",
+            fontFamily: "roboto",
             fontWeight: 400,
         },
         body2: {

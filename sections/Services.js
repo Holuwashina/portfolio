@@ -1,8 +1,9 @@
+import * as React from 'react';
 import { Grid, Typography, Card, CardContent, CardMedia, CardActionArea, Divider, useMediaQuery, Stack } from "@mui/material";
 import { useTheme } from "@mui/styles";
 
 
-function Services({ serviceCard, heading, children }) {
+function Services({serviceCard, heading, children}) {
 
   const theme = useTheme()
   const matches = useMediaQuery(theme.breakpoints.up('xs'))
@@ -12,7 +13,9 @@ function Services({ serviceCard, heading, children }) {
       <Typography align="center" gutterBottom variant="h5">
         {heading}
       </Typography>
+
       <Divider />
+      
       <Grid container justifyContent={matches ? "" : "center"} spacing={2} sx={{ pt: 2, pb: 2 }}>
         {serviceCard.map((card) => {
           return (

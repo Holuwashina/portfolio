@@ -1,41 +1,36 @@
-import Hero from "../sections/Hero";
+import HeroSection from "../sections/HeroSection";
 import Services from "../sections/Services";
+
+const ServicesData= {
+  heading: "Services",
+  serviceCard: [
+      {
+          id: 1,
+          type: "Web Application Development",
+          img: "dat.svg"
+      },
+      {
+          id: 2,
+          type: "IOS / ANDROID Development",
+          img: "dwt.svg"
+      },
+      {
+          id: 3,
+          type: "Online & Offline Tutor",
+          img: "gb.svg"
+      }
+  ]
+}
+
 
 export default function Home() {
 
-  const ServicesData= {
-    heading: "Services",
-    btn: "See More",
-    serviceCard: [
-        {
-            id: 1,
-            type: "Web Application Development",
-            img: "dat.svg"
-        },
-        {
-            id: 2,
-            type: "IOS / ANDROID Development",
-            img: "dwt.svg"
-        },
-        {
-            id: 3,
-            type: "Online & Offline Tutor",
-            img: "gb.svg"
-        }
-    ]
-}
-
-const { serviceCard, heading, btn } = ServicesData;
+  const { serviceCard, heading } = ServicesData;
 
   return (
     <>
-      <Hero />
-			<Services
-				heading={heading}
-				btn={btn}
-				serviceCard={serviceCard}
-			>
-			</Services>
+      <HeroSection />
+			<Services serviceCard={serviceCard} heading={heading} />
     </>
   )
 }

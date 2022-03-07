@@ -1,38 +1,41 @@
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
 
-const PersonalInfoData = [
-    {
-        title: "Name:",
-        info: "Hamzat Oluwashina"
-    },
-    {
-        title: "Residence:",
-        info: "Ibadan, Nigeria"
-    },
-    {
-        title: "Current Job:",
-        info: "Freelancing"
-    },
-    {
-        title: "Name:",
-        info: "Hamzat Oluwashina"
-    },
-    {
-        title: "Age:",
-        info: 25
-    },
-    {
-        title: "Language:",
-        info: "English"
-    },
-    {
-        title: "Sex:",
-        info: "Male"
-    }
-]
 
 const PersonalInfoWidget = () => {
+
+    const PersonalInfoData = [
+        {
+            title: "Name:",
+            info: "Hamzat Oluwashina"
+        },
+        {
+            title: "Residence:",
+            info: "Ibadan, Nigeria"
+        },
+        {
+            title: "Current Job:",
+            info: "Freelancing"
+        },
+        {
+            title: "Name:",
+            info: "Hamzat Oluwashina"
+        },
+        {
+            title: "Age:",
+            info: 25
+        },
+        {
+            title: "Language:",
+            info: "English"
+        },
+        {
+            title: "Sex:",
+            info: "Male"
+        }
+    ]
+
+    
     return (
         <Grid container spacing={2} sx={{ mt: 1 }}>
             {

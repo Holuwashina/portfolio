@@ -60,38 +60,34 @@ function Header() {
   return (
     <AppBar>
       <Toolbar>
+
         <Typography
           variant='h4'
           noWrap
-          component='div'
-          sx={{ m: 2, display: { xs: 'flex' } }}
+          // sx={{ m: 2, display: { xs: 'flex' } }}
         >
           {logo}
         </Typography>
 
         <Stack
           direction='row'
-          spacing={4}
+          spacing={3}
           alignItems='center'
           sx={{ margin: 'auto' }}
         >
           {
             menus.map((menu) => {
               return (
-                <LinkWidget key={menu.name} name={menu.name} path={menu.path}>
-                  {menu.icon}
-                </LinkWidget>
+                <React.Fragment key={menu.name}>
+                  <LinkWidget name={menu.name} path={menu.path}>
+                    {menu.icon}
+                  </LinkWidget>
+                </React.Fragment>
               )
             })
           }
         </Stack>
 
-        <Stack
-          direction='row'
-          spacing={3}
-          alignItems='center'
-          sx={{ justifyContent: 'end' }}
-        >
           <IconButton
             id='basic-button'
             ariacontrols='basic-menu'
@@ -107,7 +103,6 @@ function Header() {
               <Avatar alt={name} src={`/images/${img}`} />
             </StyledBadge>
           </IconButton>
-        </Stack>
 
         <Menu
           id='basic-menu'
