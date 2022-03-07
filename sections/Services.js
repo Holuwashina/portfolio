@@ -2,7 +2,13 @@ import * as React from 'react';
 import { Grid, Typography, Card, CardContent, CardMedia, CardActionArea, Divider, Stack } from "@mui/material";
 
 
-function Services({serviceCard, heading, children}) {
+
+function Services({serviceCard, heading, handleProjectClick, children}) {
+
+  // const handleProjectLink = (event, link) => {
+  //   event.preventDefault(); 
+  //   window.open(link);
+  // }
 
   return (
     <>
@@ -16,7 +22,7 @@ function Services({serviceCard, heading, children}) {
         {serviceCard.map((card) => {
           return (
             <Grid key={card.id} item xs={12} sm={6} md={4}>
-              <Card raised sx={{ maxWidth: 350, minWidth: 100 }}>
+              <Card raised sx={{ maxWidth: 350, minWidth: 100 }} onClick= {handleProjectClick} >
                 <CardActionArea>
                   <CardMedia
                     sx={{ objectFit: "fill" }}

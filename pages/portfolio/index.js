@@ -39,12 +39,16 @@ function Portfolio() {
 		setOpen(false);
 	};
 
+	const handleProjectLink = () => {
+		event.preventDefault(); 
+		window.open("https://pass-aggregate.vercel.app", "_blank");
+	  }	
 
 
 	return (
 		<>
 			<Button endIcon={<BsFilterLeft />} onClick={handleClickOpen}>Filter</Button>
-			<Services serviceCard={serviceCard} />
+			<Services serviceCard={serviceCard} handleProjectClick={handleProjectLink} />
 			<DialogComponent open={open} handleClose={handleClose} />
 		</>
 	);
