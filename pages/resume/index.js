@@ -3,8 +3,10 @@ import TabWidget from "../../components/TabWidget"
 
 function Resume() {
   return (
-  <TabWidget />
+    <>
+      <TabWidget />
+    </>
   )
 }
-  
+
 export default Resume;

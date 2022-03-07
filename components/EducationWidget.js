@@ -51,15 +51,15 @@ const EduData = [
 
 const EducationWidget = () => {
     return (
-        <Grid xs={12} container spacing={3}>
+        <Grid container spacing={3}>
             {
-                EduData.map((data) => {
+                EduData.map((data, index) => {
                     return (
-                        <Grid key={data.id} item xs={12}>
+                        <Grid key={index} item xs={12}>
                             <Card sx={{mt: 1}}>
                                 <CardContent>
                                     {
-                                        data.contents.map((content) => <Typography key={content.text} variant={content.css}>{content.text}</Typography>)
+                                        data.contents.map((content, index) => <Typography key={index} variant={content.css}>{content.text}</Typography>)
                                     }
                                 </CardContent>
                             </Card>

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Image from 'next/image';
 import { useTheme } from "@mui/styles";
 import useMediaQuery from "@mui/material/useMediaQuery"
-import {Typography, Box, Grid, Button, Divider, Tab, Tabs, SpeedDialAction, Zoom, Fab, SpeedDial, SpeedDialIcon} from '@mui/material';
+import { Typography, Box, Grid, Divider, Tab, Tabs, SpeedDialAction, SpeedDial, SpeedDialIcon } from '@mui/material';
 import SkillWidget from './SkillWidget';
 import EducationWidget from './EducationWidget';
 import KnowlegeWidget from './KnowlegeWidget';
@@ -11,21 +11,39 @@ import ExperienceWidget from './ExperienceWidget';
 import PersonalInfoWidget from "../components/PersonalInfoWidget"
 import sideImage from "../public/images/8.svg"
 import FileCopyIcon from '@mui/icons-material/FileCopyOutlined';
-import { Download } from '@mui/icons-material';
+import Download from '@mui/icons-material/Download';
 
+const TabData = [
+  {
+    id: 0,
+    name: "Information",
+    heading: "Personal Information",
 
-const fabStyle = {
-  position: "absolute",
-  bottom: 10,
-  left: 30
-}
-
-const actions = [
-  { icon: <FileCopyIcon />, name: "Copy Link" },
-  { icon: <Download />, name: "Download CV" },
+  },
+  {
+    id: 1,
+    name: "Education",
+    heading: "Education",
+  },
+  {
+    id: 2,
+    name: "Knowlege",
+    heading: "Knowlege",
+  },
+  {
+    id: 3,
+    name: "Skills",
+    heading: "My Skills",
+  },
+  {
+    id: 4,
+    name: "Experience",
+    heading: "Experience",
+  },
 ]
 
-function TabWidget() {
+
+const TabWidget = () => {
 
   const [value, setValue] = React.useState(0);
 
@@ -33,75 +51,50 @@ function TabWidget() {
   const matches = useMediaQuery(theme.breakpoints.down('md'))
   const smMatches = useMediaQuery(theme.breakpoints.up('md'))
 
-  const TabData = [
-    {
-      id: 0,
-      name: "Information",
-      heading: "Personal Information",
-
-    },
-    {
-      id: 1,
-      name: "Education",
-      heading: "Education",
-    },
-    {
-      id: 2,
-      name: "Knowlege",
-      heading: "Knowlege",
-    },
-    {
-      id: 3,
-      name: "Skills",
-      heading: "My Skills",
-    },
-    {
-      id: 4,
-      name: "Experience",
-      heading: "Experience",
-    },
-  ]
 
   return (
-    <Grid direction={matches ? "column-reverse" : ""} container spacing={2} >
+    <Grid container spacing={2} sx={{flexDirection: matches ? "column-reverse" : "" }} >
       <Grid item sm={12} md={6}>
         <Box sx={{ position: "relative", height: 500 }}>
           <StyledTab tabValue={value} tabSetValue={setValue} tabs={TabData}>
             {
-              TabData.map((tab) => {
+              TabData.map((tab, index) => {
                 return (
-                  <TabPanel key={tab.id} value={value} index={tab.id}>
-                    <Typography gutterBottom variant='h5'>{tab.heading}</Typography>
-                    <Divider />
-                    {
-                      value === 0 && <PersonalInfoWidget /> ||
-                      value === 1 && <EducationWidget /> ||
-                      value === 2 && <KnowlegeWidget /> ||
-                      value === 3 && <SkillWidget /> ||
-                      value === 4 && <ExperienceWidget />
-                    }
-                  </TabPanel>
+                  <React.Fragment key={index}>
+                    <TabPanel value={value} index={tab.id}>
+                      <Typography gutterBottom variant='h5'>{tab.heading}</Typography>
+                      <Divider />
+                      {
+                        value === 0 && <PersonalInfoWidget /> ||
+                        value === 1 && <EducationWidget /> ||
+                        value === 2 && <KnowlegeWidget /> ||
+                        value === 3 && <SkillWidget /> ||
+                        value === 4 && <ExperienceWidget />
+                      }
+                    </TabPanel>
+                  </React.Fragment>
                 )
               })
             }
           </StyledTab>
-          <SpeedDial 
-          ariaLabel = "SImpleDial basic example"
-          direction= "right"
-          icon={<SpeedDialIcon sx={{fontSize: 3}} />}
-          sx={{ position: "absolute", bottom: 10, left: 30 }}
+          <SpeedDial
+            ariaLabel="SImpleDial basic example"
+            direction="right"
+            icon={<SpeedDialIcon sx={{ fontSize: 3 }} />}
+            sx={{ position: "absolute", bottom: 3, left: 30 }}
           >
-            {
-              actions.map((action) => (
                 <SpeedDialAction
-                  key={action.name}
-                  icon={action.icon}
-                  tooltipTitle={action.name}
+                  icon={<FileCopyIcon />}
+                  tooltipTitle="Copy Link"
                   tooltipPlacement="bottom"
                 />
-              ))
-            }
+                <SpeedDialAction
+                  icon={<Download />}
+                  tooltipTitle="Download CV"
+                  tooltipPlacement="bottom"
+                />
           </SpeedDial>
+          
         </Box>
       </Grid>
       {
@@ -112,15 +105,13 @@ function TabWidget() {
           </Box>
         </Grid>
       }
-
     </Grid>
   );
 }
 export default TabWidget;
 
 
-const TabPanel = (props) => {
-  const { children, value, index, ...other } = props;
+const TabPanel = ({ children, value, index, ...other }) => {
 
   return (
     <div
@@ -147,8 +138,7 @@ TabPanel.propTypes = {
 };
 
 
-const StyledTab = (props) => {
-  const { children, tabs, tabValue, tabSetValue } = props
+const StyledTab = ({ children, tabs, tabValue, tabSetValue }) => {
 
   const handleChange = (event, newValue) => {
     tabSetValue(newValue);
@@ -164,7 +154,7 @@ const StyledTab = (props) => {
         scrollButtons="auto"
       >
         {
-          tabs.map((tab) => <Tab key={tab.id} label={tab.name} {...a11yProps(`${tab.id}`)} />)
+          tabs.map((tab, index) => <Tab key={index} label={tab.name} {...a11yProps(`${tab.id}`)} />)
         }
       </Tabs>
       {children}

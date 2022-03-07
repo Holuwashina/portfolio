@@ -42,9 +42,9 @@ const KnowlegeWidget = () => {
     return (
         <List>
             {
-                KnowlegeData.map((data) => {
+                KnowlegeData.map((data, index) => {
                     return (
-                        <ListItem key={data.id}>
+                        <ListItem key={index}>
                             <ListItemIcon >
                                 {data.icon}
                             </ListItemIcon>

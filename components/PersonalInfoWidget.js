@@ -39,9 +39,9 @@ const PersonalInfoWidget = () => {
     return (
         <Grid container spacing={2} sx={{ mt: 1 }}>
             {
-                PersonalInfoData.map((data) => {
+                PersonalInfoData.map((data, index) => {
                     return (
-                        <Grid key={data.title} item xs={6}>
+                        <Grid key={index} item xs={6}>
                             <Typography variant='subtitle1'>{data.title}</Typography>
                             <Typography variant='subtitle2'>{data.info}</Typography>
                         </Grid>
