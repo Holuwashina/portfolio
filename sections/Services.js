@@ -19,7 +19,7 @@ function Services({serviceCard, heading, children}) {
       <Grid container justifyContent={matches ? "" : "center"} spacing={2} sx={{ pt: 2, pb: 2 }}>
         {serviceCard.map((card) => {
           return (
-            <Grid key={card.id} item xs={6} sm={4}>
+            <Grid key={card.id} item xs={12} sm={4}>
               <Card raised sx={{ maxWidth: 350, minWidth: 100 }}>
                 <CardActionArea>
                   <CardMedia
