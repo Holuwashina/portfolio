@@ -1,12 +1,11 @@
 import * as React from 'react';
+import Link from "next/link";
 import { styled } from '@mui/material/styles';
 import { AppBar, Box, Badge, Avatar, Switch, Toolbar, Divider, Typography, Menu, Stack, IconButton } from '@mui/material';
 import Home from '@mui/icons-material/Home';
 import Folder from '@mui/icons-material/Folder';
 import StyleIcon from '@mui/icons-material/Style';
 import { BiMailSend, BiPhoneCall } from 'react-icons/bi';
-import LinkWidget from "../components/LinkWidget";
-
 
 function Header() {
 
@@ -76,9 +75,9 @@ function Header() {
           sx={{ margin: 'auto' }}
         >
           {
-            menus.map((menu) => {
+            menus.map((menu, index) => {
               return (
-                <React.Fragment key={menu.name}>
+                <React.Fragment key={index}>
                   <LinkWidget name={menu.name} path={menu.path}>
                     {menu.icon}
                   </LinkWidget>
@@ -145,6 +144,25 @@ function Header() {
   );
 }
 export default Header;
+
+
+const LinkWidget = ({children, name, path}) => {
+    return (
+        <>
+            <Link href={path}>
+                <Box sx={{ textAlign: 'center' }}>
+                    <IconButton color="inherit" size='small'>
+                        {children}
+                    </IconButton>
+                    <Typography variant='body2' sx={{ marginTop: '-3px' }}>
+                        {name}
+                    </Typography>
+                </Box>
+            </Link>
+        </>
+    )
+}
+
 
 const StyledBadge = styled(Badge)(({ theme }) => ({
   '& .MuiBadge-badge': {

@@ -1,6 +1,7 @@
 import { createTheme } from "@mui/material/styles"
 import "@fontsource/alex-brush"
 import "@fontsource/roboto"
+import "@fontsource/squada-one"
 import "@fontsource/leckerli-one"
 import "@fontsource/assistant"
 
@@ -8,9 +9,9 @@ let theme = createTheme({
     palette: {
         mode: "light",
         primary: {
-            main: "#004d40",
-            light: "#39796b",
-            dark: "#00251a"
+            main: "#1a237e",
+            light: "#534bae",
+            dark: "#000051"
         },
         secondary: {
             main: "#6a1b9a",
@@ -23,48 +24,38 @@ let theme = createTheme({
 
 theme = createTheme(theme, {
     typography: {
-        h6: {
-            fontFamily: "assistant",
-            fontWeight: 400,
-            fontSize: "1.1rem"
-        },
         h5: {
-            fontFamily: "leckerli One",
-            fontSize: "1.1rem"
+            fontFamily: ["leckerli One","Segoe UI", "Roboto"].join(","),
+            fontSize: "1rem",
+            textTransform: "uppercase",
         },
         h4: {
-            fontFamily: "Alex brush",
-            // fontWeight: 200
+            fontFamily: ["Alex brush","Segoe UI", "Roboto"].join(","),
         },
         body1: {
-            fontFamily: "roboto",
-            fontWeight: 400,
+            fontFamily: ["squada one","Segoe UI", "Roboto"].join(","),
         },
         body2: {
-            fontFamily: "assistant",
-            fontWeight: 400,
-            fontSize: "0.65rem",
-            letterSpacing: "0.07em",
+            fontFamily: ["squada one","Segoe UI", "Roboto"].join(","),
+            fontSize: "0.7rem",
+            letterSpacing: "0.08em",
         },
         button: {
-            fontFamily: "assistant",
+            fontFamily: ["squada one","Segoe UI", "Roboto"].join(","),
         },
         subtitle1: {
-            fontFamily: "assistant",
-            fontWeight: 400,
-            fontSize: "0.7rem",
+            fontFamily: ["squada one","Segoe UI", "Roboto"].join(","),
+            fontSize: "0.8rem",
             letterSpacing: "0.07em",
             textTransform: "uppercase",
         },
         subtitle2: {
-            fontFamily: "assistant",
-            fontWeight: 400,
-            fontSize: "0.8rem",
+            fontFamily: ["squada one","Segoe UI", "Roboto"].join(","),
+            fontSize: "0.9rem",
         },
         caption: {
-            fontFamily: "assistant",
-            fontWeight: 400,
-            fontSize: "0.6rem",
+            fontFamily: ["squada one","Segoe UI", "Roboto"].join(","),
+            fontSize: "0.8rem",
         },
     },
 
@@ -129,8 +120,7 @@ theme = createTheme(theme, {
         MuiChip: {
             styleOverrides: {
                 root: {
-                    fontFamily: "assistant",
-                    fontWeight: 400,
+                    fontFamily: "squada one",
                     fontSize: "0.6rem",
                     letterSpacing: "0.07em",
                     textTransform: "uppercase",

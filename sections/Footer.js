@@ -161,7 +161,7 @@ const steps = [
 	},
 	{
 		question: `What's the price you charge on a project ?`,
-		answer: `Price of a project is derived from these factors ( application category and complexity ).`,
+		answer: `Price of a project is determined by the complexity and some others technical aspect of the application.`,
 	},
 ];
 
@@ -183,7 +183,7 @@ export function TextMobileStepper() {
 			<Paper>
 				<Divider sx={{ pb: 3, pt: 2 }}>
 					<Typography variant="h5" textAlign="center">
-						FAQS
+						ABOUT ME
 					</Typography>
 				</Divider>
 				<Typography textAlign="left" sx={{ ml: 3 }}>
