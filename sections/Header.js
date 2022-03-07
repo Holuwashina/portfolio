@@ -64,7 +64,7 @@ function Header() {
         <Typography
           variant='h4'
           noWrap
-          sx={{ mb: -1 }}
+          sx={{ mb: -2 }}
         >
           {logo}
         </Typography>
