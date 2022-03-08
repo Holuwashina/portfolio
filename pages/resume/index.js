@@ -101,7 +101,7 @@ const Portfolio = () => {
           smMatches &&
           <Grid item sm={12} md={6} >
             <Box sx={{ height: 400, display: "flex", alignItems: "flex-end", justifyContent: "center" }}>
-              <Image src={sideImage} width={300} height={300} priority />
+              <Image src={sideImage} alt="" width={300} height={300} priority />
             </Box>
           </Grid>
         }
