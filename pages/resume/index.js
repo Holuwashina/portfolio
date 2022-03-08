@@ -1,7 +1,13 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
 import Image from 'next/image';
-import { Typography, Box, Grid, Divider, Tab, Tabs, SpeedDialAction, SpeedDial, SpeedDialIcon } from '@mui/material';
+import { useTheme } from "@mui/styles";
+import { Typography, Box, Grid, Divider, Tab, Tabs, SpeedDialAction, SpeedDial, SpeedDialIcon, useMediaQuery } from '@mui/material';
+import SkillWidget from '../../components/SkillWidget';
+import EducationWidget from '../../components/EducationWidget';
+import KnowlegeWidget from '../../components/KnowlegeWidget';
+import ExperienceWidget from '../../components/ExperienceWidget';
+import PersonalInfoWidget from "../../components/PersonalInfoWidget"
 import sideImage from "../../public/images/8.svg"
 import FileCopyIcon from '@mui/icons-material/FileCopyOutlined';
 import Download from '@mui/icons-material/Download';
@@ -38,11 +44,11 @@ const TabData = [
 
 const Portfolio = () => {
 
-  // const [value, setValue] = React.useState(0);
+  const [value, setValue] = React.useState(0);
 
-  // const theme = useTheme()
-  // const matches = useMediaQuery(theme.breakpoints.down('md'))
-  // const smMatches = useMediaQuery(theme.breakpoints.up('md'))
+  const theme = useTheme()
+  const matches = useMediaQuery(theme.breakpoints.down('md'))
+  const smMatches = useMediaQuery(theme.breakpoints.up('md'))
 
 
   return (
