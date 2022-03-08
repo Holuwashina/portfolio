@@ -61,11 +61,11 @@ function Hero() {
             icons.map((icon) => {
               return (
                 <React.Fragment key={icon.name}>
-                <IconButton color="primary" size='small'>
                   <a href={icon.link} target="_blank" rel="noopener noreferrer">
-                    {icon.name}
+                    <IconButton href={icon.link} target="_blank" rel="noopener noreferrer" color="primary" size='small'>
+                      {icon.name}
+                    </IconButton>
                   </a>
-                </IconButton>
                 </React.Fragment>
               )
             })
@@ -73,7 +73,7 @@ function Hero() {
         </Stack>
 
         {/* <Link href={link} passHref> */}
-          <Button variant='contained'>{btn}</Button>
+        <Button variant='contained'>{btn}</Button>
         {/* </Link> */}
       </Grid>
 
@@ -90,14 +90,14 @@ function Hero() {
             mainWidget.map((program, index) => {
               return (
                 <React.Fragment key={index}>
-                <HomeWidget heading={program.title} percentage={program.level}>
-                  <Stack direction='row' spacing={1}>
-                    {
-                      program.codes.map((code) => <Typography key={code} variant='body2'>{code}</Typography>)
-                    }
-                  </Stack>
-                  <Divider />
-                </HomeWidget>
+                  <HomeWidget heading={program.title} percentage={program.level}>
+                    <Stack direction='row' spacing={1}>
+                      {
+                        program.codes.map((code) => <Typography key={code} variant='body2'>{code}</Typography>)
+                      }
+                    </Stack>
+                    <Divider />
+                  </HomeWidget>
                 </React.Fragment>
               )
             })

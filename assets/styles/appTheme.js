@@ -73,9 +73,9 @@ theme = createTheme(theme, {
         MuiTab: {
             styleOverrides: {
                 root: {
-                    fontWeight: 400,
-                    fontSize: "0.7rem",
-                    letterSpacing: "0.07em",
+                    fontSize: "0.65rem",
+                    minWidth: 0,
+                    maxWidth: 300
                     // color: theme.palette.primary.main
                 },
             }

@@ -150,7 +150,6 @@ const StyledTab = ({ children, tabs, tabValue, tabSetValue }) => {
         onChange={handleChange}
         aria-label='basic tabs example'
         variant="scrollable"
-        scrollButtons="auto"
       >
         {
           tabs.map((tab, index) => <Tab key={index} label={tab.name} {...a11yProps(`${tab.id}`)} />)
