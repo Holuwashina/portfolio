@@ -12,34 +12,34 @@ import sideImage from "../../public/images/8.svg"
 import FileCopyIcon from '@mui/icons-material/FileCopyOutlined';
 import Download from '@mui/icons-material/Download';
 
-// const TabData = [
-//   {
-//     id: 0,
-//     name: "Information",
-//     heading: "Personal Information",
+const TabData = [
+  {
+    id: 0,
+    name: "Information",
+    heading: "Personal Information",
 
-//   },
-//   {
-//     id: 1,
-//     name: "Education",
-//     heading: "Education",
-//   },
-//   {
-//     id: 2,
-//     name: "Knowlege",
-//     heading: "Knowlege",
-//   },
-//   {
-//     id: 3,
-//     name: "Skills",
-//     heading: "My Skills",
-//   },
-//   {
-//     id: 4,
-//     name: "Experience",
-//     heading: "Experience",
-//   },
-// ]
+  },
+  {
+    id: 1,
+    name: "Education",
+    heading: "Education",
+  },
+  {
+    id: 2,
+    name: "Knowlege",
+    heading: "Knowlege",
+  },
+  {
+    id: 3,
+    name: "Skills",
+    heading: "My Skills",
+  },
+  {
+    id: 4,
+    name: "Experience",
+    heading: "Experience",
+  },
+]
 
 
 const Portfolio = () => {
