@@ -5,11 +5,6 @@ import { Grid, Typography, Card, CardContent, CardMedia, CardActionArea, Divider
 
 function Services({serviceCard, heading, handleProjectClick, children}) {
 
-  // const handleProjectLink = (event, link) => {
-  //   event.preventDefault(); 
-  //   window.open(link);
-  // }
-
   return (
     <>
       <Typography align="center" gutterBottom variant="h5">

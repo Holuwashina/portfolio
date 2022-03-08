@@ -2,7 +2,6 @@ import * as React from 'react';
 import {  Button, Stack, FormControl, FormControlLabel, FormLabel, Radio, RadioGroup, InputLabel, Select, MenuItem , Dialog, DialogActions, DialogContent, Slide } from "@mui/material";
 import { BsFilterLeft } from "react-icons/bs";
 import Services from "../../sections/Services";
-// import { PortfolioData } from "../../pages/index";
 
 
 const serviceCard = [

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Image from 'next/image';
 import { useTheme } from "@mui/styles";
 import useMediaQuery from "@mui/material/useMediaQuery"
-import { Typography, Box, Grid, Divider, Tab, Tabs, SpeedDialAction, SpeedDial, SpeedDialIcon } from '@mui/material';
+import { Typography, Box, Grid, Divider, Tab, Tabs, SpeedDialAction, SpeedDial, SpeedDialIcon, useMediaQuery } from '@mui/material';
 import SkillWidget from './SkillWidget';
 import EducationWidget from './EducationWidget';
 import KnowlegeWidget from './KnowlegeWidget';
