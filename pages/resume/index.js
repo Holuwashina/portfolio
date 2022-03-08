@@ -52,10 +52,9 @@ const Portfolio = () => {
 
 
   return (
-    <div>
-      <Grid container spacing={2} sx={{ flexDirection: matches ? "column-reverse" : "" }} >
+    <>
         <Grid item sm={12} md={6}>
-          <Box sx={{ position: "relative", height: 500 }}>
+          <Box sx={{ position: "relative", height: 600 }}>
             <StyledTab tabValue={value} tabSetValue={setValue} tabs={TabData}>
               {
                 TabData.map((tab, index) => {
@@ -64,13 +63,13 @@ const Portfolio = () => {
                       <TabPanel value={value} index={tab.id}>
                         <Typography gutterBottom variant='h5'>{tab.heading}</Typography>
                         <Divider />
-                        {/* {
+                        {
                           value === 0 && <PersonalInfoWidget /> ||
                           value === 1 && <EducationWidget /> ||
                           value === 2 && <KnowlegeWidget /> ||
                           value === 3 && <SkillWidget /> ||
                           value === 4 && <ExperienceWidget />
-                        } */}
+                        }
                       </TabPanel>
                     </React.Fragment>
                   )
@@ -97,16 +96,15 @@ const Portfolio = () => {
 
           </Box>
         </Grid>
-        {/* {
+        {
           smMatches &&
           <Grid item sm={12} md={6} >
             <Box sx={{ height: 400, display: "flex", alignItems: "flex-end", justifyContent: "center" }}>
               <Image src={sideImage} alt="" width={300} height={300} priority />
             </Box>
           </Grid>
-        } */}
-      </Grid>
-    </div>
+        }
+    </>
   );
 }
 export default Portfolio;
