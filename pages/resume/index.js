@@ -53,6 +53,7 @@ const Portfolio = () => {
 
   return (
     <>
+      <Grid direction={matches ? "column-reverse" : ""} container spacing={2} >
         <Grid item sm={12} md={6}>
           <Box sx={{ position: "relative", height: 600 }}>
             <StyledTab tabValue={value} tabSetValue={setValue} tabs={TabData}>
@@ -104,6 +105,7 @@ const Portfolio = () => {
             </Box>
           </Grid>
         }
+      </Grid>
     </>
   );
 }
