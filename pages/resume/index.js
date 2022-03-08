@@ -53,7 +53,7 @@ const Portfolio = () => {
 
   return (
     <>
-      <Grid container spacing={2} sx={{ flexDirection: matches ? "column-reverse" : "" }} >
+      {/* <Grid container spacing={2} sx={{ flexDirection: matches ? "column-reverse" : "" }} >
         <Grid item sm={12} md={6}>
           <Box sx={{ position: "relative", height: 500 }}>
             <StyledTab tabValue={value} tabSetValue={setValue} tabs={TabData}>
@@ -105,67 +105,67 @@ const Portfolio = () => {
             </Box>
           </Grid>
         }
-      </Grid>
+      </Grid> */}
     </>
   );
 }
 export default Portfolio;
 
 
-const TabPanel = ({ children, value, index, ...other }) => {
+// const TabPanel = ({ children, value, index, ...other }) => {
 
-  return (
-    <div
-      role='tabpanel'
-      hidden={value !== index}
-      id={`simple-tabpanel-${index}`}
-      aria-labelledby={`simple-tab-${index}`}
-      {...other}
-    >
-      {value === index && (
-        <Box sx={{ p: 3 }}>
-          {children}
-        </Box>
-      )}
-    </div>
-  );
-}
-
-
-TabPanel.propTypes = {
-  children: PropTypes.node,
-  index: PropTypes.number.isRequired,
-  value: PropTypes.number.isRequired,
-};
+//   return (
+//     <div
+//       role='tabpanel'
+//       hidden={value !== index}
+//       id={`simple-tabpanel-${index}`}
+//       aria-labelledby={`simple-tab-${index}`}
+//       {...other}
+//     >
+//       {value === index && (
+//         <Box sx={{ p: 3 }}>
+//           {children}
+//         </Box>
+//       )}
+//     </div>
+//   );
+// }
 
 
-const StyledTab = ({ children, tabs, tabValue, tabSetValue }) => {
+// TabPanel.propTypes = {
+//   children: PropTypes.node,
+//   index: PropTypes.number.isRequired,
+//   value: PropTypes.number.isRequired,
+// };
 
-  const handleChange = (event, newValue) => {
-    tabSetValue(newValue);
-  };
 
-  return (
-    <>
-      <Tabs
-        value={tabValue}
-        onChange={handleChange}
-        aria-label='basic tabs example'
-        variant="scrollable"
-        scrollButtons="auto"
-      >
-        {
-          tabs.map((tab, index) => <Tab key={index} label={tab.name} {...a11yProps(`${tab.id}`)} />)
-        }
-      </Tabs>
-      {children}
-    </>
-  )
-}
+// const StyledTab = ({ children, tabs, tabValue, tabSetValue }) => {
 
-const a11yProps = (index) => {
-  return {
-    id: `simple-tab-${index}`,
-    'aria-controls': `simple-tabpanel-${index}`,
-  };
-}
+//   const handleChange = (event, newValue) => {
+//     tabSetValue(newValue);
+//   };
+
+//   return (
+//     <>
+//       <Tabs
+//         value={tabValue}
+//         onChange={handleChange}
+//         aria-label='basic tabs example'
+//         variant="scrollable"
+//         scrollButtons="auto"
+//       >
+//         {
+//           tabs.map((tab, index) => <Tab key={index} label={tab.name} {...a11yProps(`${tab.id}`)} />)
+//         }
+//       </Tabs>
+//       {children}
+//     </>
+//   )
+// }
+
+// const a11yProps = (index) => {
+//   return {
+//     id: `simple-tab-${index}`,
+//     'aria-controls': `simple-tabpanel-${index}`,
+//   };
+// }
