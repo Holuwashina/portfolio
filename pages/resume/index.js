@@ -53,9 +53,9 @@ const Portfolio = () => {
 
   return (
     <>
-      <Grid container spacing={2} sx={{ flexDirection: matches ? "column-reverse" : "" }} >
+      <Grid container spacing={2} >
         <Grid item sm={12} md={6}>
-          <Box sx={{ height: 500 }}>
+          <Box sx={{ position: "relative", height: 500 }}>
             <StyledTab tabValue={value} tabSetValue={setValue} tabs={TabData}>
               {
                 TabData.map((tab, index) => {
