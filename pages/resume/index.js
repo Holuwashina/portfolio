@@ -52,8 +52,8 @@ const Portfolio = () => {
 
 
   return (
-    <>
-      <Grid container spacing={2} >
+    <div>
+      <Grid container spacing={2} sx={{ flexDirection: matches ? "column-reverse" : "" }} >
         <Grid item sm={12} md={6}>
           <Box sx={{ position: "relative", height: 500 }}>
             <StyledTab tabValue={value} tabSetValue={setValue} tabs={TabData}>
@@ -106,7 +106,7 @@ const Portfolio = () => {
           </Grid>
         }
       </Grid>
-    </>
+    </div>
   );
 }
 export default Portfolio;
