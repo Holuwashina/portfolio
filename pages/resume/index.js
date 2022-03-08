@@ -1,13 +1,7 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
 import Image from 'next/image';
-import { useTheme } from "@mui/styles";
 import { Typography, Box, Grid, Divider, Tab, Tabs, SpeedDialAction, SpeedDial, SpeedDialIcon, useMediaQuery } from '@mui/material';
-import SkillWidget from '../../components/SkillWidget';
-import EducationWidget from '../../components/EducationWidget';
-import KnowlegeWidget from '../../components/KnowlegeWidget';
-import ExperienceWidget from '../../components/ExperienceWidget';
-import PersonalInfoWidget from "../../components/PersonalInfoWidget"
 import sideImage from "../../public/images/8.svg"
 import FileCopyIcon from '@mui/icons-material/FileCopyOutlined';
 import Download from '@mui/icons-material/Download';
