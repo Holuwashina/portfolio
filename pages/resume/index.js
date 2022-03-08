@@ -42,7 +42,7 @@ const TabData = [
 ]
 
 
-const TabWidget = () => {
+const Portfolio = () => {
 
   const [value, setValue] = React.useState(0);
 
@@ -53,63 +53,63 @@ const TabWidget = () => {
 
   return (
     <>
-    <Grid container spacing={2} sx={{flexDirection: matches ? "column-reverse" : "" }} >
-      <Grid item sm={12} md={6}>
-        <Box sx={{ position: "relative", height: 500 }}>
-          <StyledTab tabValue={value} tabSetValue={setValue} tabs={TabData}>
-            {
-              TabData.map((tab, index) => {
-                return (
-                  <React.Fragment key={index}>
-                    <TabPanel value={value} index={tab.id}>
-                      <Typography gutterBottom variant='h5'>{tab.heading}</Typography>
-                      <Divider />
-                      {
-                        value === 0 && <PersonalInfoWidget /> ||
-                        value === 1 && <EducationWidget /> ||
-                        value === 2 && <KnowlegeWidget /> ||
-                        value === 3 && <SkillWidget /> ||
-                        value === 4 && <ExperienceWidget />
-                      }
-                    </TabPanel>
-                  </React.Fragment>
-                )
-              })
-            }
-          </StyledTab>
-          <SpeedDial
-            ariaLabel="SImpleDial basic example"
-            direction="right"
-            icon={<SpeedDialIcon sx={{ fontSize: 3 }} />}
-            sx={{ position: "absolute", bottom: 3, left: 30 }}
-          >
-                <SpeedDialAction
-                  icon={<FileCopyIcon />}
-                  tooltipTitle="Copy Link"
-                  tooltipPlacement="bottom"
-                />
-                <SpeedDialAction
-                  icon={<Download />}
-                  tooltipTitle="Download CV"
-                  tooltipPlacement="bottom"
-                />
-          </SpeedDial>
-          
-        </Box>
-      </Grid>
-      {
-        smMatches &&
-        <Grid item sm={12} md={6} >
-          <Box sx={{ height: 400, display: "flex", alignItems: "flex-end", justifyContent: "center" }}>
-            <Image src={sideImage} width={300} height={300} priority />
+      <Grid container spacing={2} sx={{ flexDirection: matches ? "column-reverse" : "" }} >
+        <Grid item sm={12} md={6}>
+          <Box sx={{ position: "relative", height: 500 }}>
+            <StyledTab tabValue={value} tabSetValue={setValue} tabs={TabData}>
+              {
+                TabData.map((tab, index) => {
+                  return (
+                    <React.Fragment key={index}>
+                      <TabPanel value={value} index={tab.id}>
+                        <Typography gutterBottom variant='h5'>{tab.heading}</Typography>
+                        <Divider />
+                        {
+                          value === 0 && <PersonalInfoWidget /> ||
+                          value === 1 && <EducationWidget /> ||
+                          value === 2 && <KnowlegeWidget /> ||
+                          value === 3 && <SkillWidget /> ||
+                          value === 4 && <ExperienceWidget />
+                        }
+                      </TabPanel>
+                    </React.Fragment>
+                  )
+                })
+              }
+            </StyledTab>
+            <SpeedDial
+              ariaLabel="SImpleDial basic example"
+              direction="right"
+              icon={<SpeedDialIcon sx={{ fontSize: 3 }} />}
+              sx={{ position: "absolute", bottom: 3, left: 30 }}
+            >
+              <SpeedDialAction
+                icon={<FileCopyIcon />}
+                tooltipTitle="Copy Link"
+                tooltipPlacement="bottom"
+              />
+              <SpeedDialAction
+                icon={<Download />}
+                tooltipTitle="Download CV"
+                tooltipPlacement="bottom"
+              />
+            </SpeedDial>
+
           </Box>
         </Grid>
-      }
-    </Grid>
+        {
+          smMatches &&
+          <Grid item sm={12} md={6} >
+            <Box sx={{ height: 400, display: "flex", alignItems: "flex-end", justifyContent: "center" }}>
+              <Image src={sideImage} width={300} height={300} priority />
+            </Box>
+          </Grid>
+        }
+      </Grid>
     </>
   );
 }
-export default TabWidget;
+export default Portfolio;
 
 
 const TabPanel = ({ children, value, index, ...other }) => {
