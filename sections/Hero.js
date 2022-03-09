@@ -60,7 +60,7 @@ function Hero() {
           {
             icons.map((icon, index) => {
               return (
-                <React.Fragment key={i}>
+                <React.Fragment key={index}>
                   <IconButton href={icon.link} target="_blank" rel="noopener noreferrer" size='small' color="primary" >
                     {icon.name}
                   </IconButton>
