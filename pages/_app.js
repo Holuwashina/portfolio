@@ -3,21 +3,9 @@ import Header from '../sections/Header';
 import Footer from '../sections/Footer';
 import { ThemeProvider } from "@mui/material/styles";
 import theme from "../assets/styles/appTheme";
-import { CssBaseline, useMediaQuery, Paper, Container } from '@mui/material';
-import { useTheme } from "@mui/styles";
-
+import { CssBaseline, Paper, Container } from '@mui/material';
 
 function MyApp({ Component, pageProps }) {
-
-  // const themeHook = useTheme()
-  const smMatches = useMediaQuery(theme.breakpoints.only('sm'))
-  const xsMatches = useMediaQuery(theme.breakpoints.only('xs'))
-  // const smMatches = useMediaQuery(theme.breakpoints.up('md'))
-
-  const xs = {
-    paddingLeft: 10,
-    paddingRight: 10
-  }
 
   return (
     <>

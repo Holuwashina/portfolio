@@ -8,7 +8,7 @@ import EducationWidget from '../../components/EducationWidget';
 import KnowlegeWidget from '../../components/KnowlegeWidget';
 import ExperienceWidget from '../../components/ExperienceWidget';
 import PersonalInfoWidget from "../../components/PersonalInfoWidget"
-import sideImage from "../../public/images/8.svg"
+import sideImage from "../../public/images/side.svg"
 import FileCopyIcon from '@mui/icons-material/FileCopyOutlined';
 import Download from '@mui/icons-material/Download';
 
@@ -53,9 +53,9 @@ const Portfolio = () => {
 
   return (
     <>
-      <Grid direction={matches ? "column-reverse" : ""} container spacing={2} >
+      <Grid container spacing={2} >
         <Grid item sm={12} md={6}>
-          <Box sx={{ position: "relative", height: 600 }}>
+          <Box sx={{ position: "relative", height: 600, mx:"auto" }}>
             <StyledTab tabValue={value} tabSetValue={setValue} tabs={TabData}>
               {
                 TabData.map((tab, index) => {

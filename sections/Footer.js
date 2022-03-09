@@ -5,7 +5,7 @@ import { Container, Box, Divider, Typography, Paper, IconButton, Stack, Button, 
 import { KeyboardArrowLeft, KeyboardArrowRight } from "@mui/icons-material";
 import { AiOutlineLinkedin } from "react-icons/ai";
 import { RiFacebookCircleLine, RiGithubLine, RiTwitterLine, RiWhatsappLine, RiMessengerLine } from "react-icons/ri";
-import sideImage from "../public/images/1.svg";
+import footerImage from "../public/images/footer.svg";
 
 
 function Footer() {
@@ -88,7 +88,7 @@ function Footer() {
 				{about ? (
 					<TextMobileStepper />
 				) : (
-					<Image src={sideImage} alt="" width={300} height={200} priority />
+					<Image src={footerImage} alt="" width={300} height={200} priority />
 				)}
 			</Box>
 
