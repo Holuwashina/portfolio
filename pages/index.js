@@ -1,4 +1,4 @@
-import HeroSection from "../sections/HeroSection";
+import Hero from "../sections/Hero";
 import Services from "../sections/Services";
 
 const ServicesData= {
@@ -29,7 +29,7 @@ export default function Home() {
 
   return (
     <>
-      <HeroSection />
+      <Hero />
 			<Services serviceCard={serviceCard} heading={heading} />
     </>
   )
