@@ -1,7 +1,9 @@
 import * as React from 'react';
+import Link from "next/link";
 import { useTheme } from "@mui/styles";
 import { Grid, Typography, Button, Stack, Divider, IconButton, useMediaQuery } from '@mui/material';
-import { SiGithub, SiLinkedin } from 'react-icons/si';
+import { AiOutlineLinkedin } from 'react-icons/ai';
+import { RiGithubLine } from 'react-icons/ri';
 
 function Hero() {
 
@@ -12,11 +14,11 @@ function Hero() {
 
     icons: [
       {
-        name: <SiGithub />,
+        name: <RiGithubLine />,
         link: "https://www.google.com"
       },
       {
-        name: <SiLinkedin />,
+        name: <AiOutlineLinkedin />,
         link: "https://www.google.com"
       }
     ],
@@ -54,24 +56,23 @@ function Hero() {
       <Grid item xs={12} md={7} sx={{ textAlign: 'center' }}>
         <Typography variant='h5'>{heading}</Typography>
         <Typography variant='body1' gutterBottom>I'm <span style={{ color: "red" }}>OLUWASHINA</span>, a creative, skilled and experienced <span style={{ color: "red" }}>Web and Mobile application developer</span> from NIGERIA. I design and develop <span style={{ color: "red" }}>Front-end</span> and implement <span style={{ color: "red" }}>Back-end </span>using <span style={{ color: "red" }}>JAVASCRIPT</span> and cutting edge technologies.</Typography>
-        {/* href={icon.link} target="_blank" rel="noopener noreferrer" */}
-        {/* <Stack direction='row' spacing={1} justifyContent='center' mb={2}>
+        <Stack direction='row' spacing={1} justifyContent='center' mb={2}>
           {
             icons.map((icon, index) => {
               return (
                 <React.Fragment key={i}>
-                  <IconButton  size='small' color="primary" >
+                  <IconButton href={icon.link} target="_blank" rel="noopener noreferrer" size='small' color="primary" >
                     {icon.name}
                   </IconButton>
                 </React.Fragment>
               )
             })
           }
-        </Stack> */}
+        </Stack>
 
-        {/* <Link href={link} passHref> */}
-        <Button variant='contained'>{btn}</Button>
-        {/* </Link> */}
+        <Link href={link} passHref>
+          <Button variant='contained'>{btn}</Button>
+        </Link>
       </Grid>
 
       {/* Hero Right Widget */}

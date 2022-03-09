@@ -150,7 +150,7 @@ const LinkWidget = ({children, name, path}) => {
     return (
         <>
             <Link href={path}>
-                <Box sx={{ textAlign: 'center' }}>
+                <Box sx={{ textAlign: 'center', cursor: "pointer" }}>
                     <IconButton color="inherit" size='small'>
                         {children}
                     </IconButton>
