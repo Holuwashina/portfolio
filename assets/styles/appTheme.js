@@ -5,6 +5,7 @@ import "@fontsource/squada-one"
 import "@fontsource/leckerli-one"
 import "@fontsource/assistant"
 
+// 00aaf4
 let theme = createTheme({
     palette: {
         mode: "light",

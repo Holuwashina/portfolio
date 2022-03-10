@@ -3,6 +3,7 @@ import Link from "next/link";
 import { useTheme } from "@mui/styles";
 import { Paper, Grid, Typography, Button, Stack, Divider, IconButton, useMediaQuery } from '@mui/material';
 import { SiGithub, SiLinkedin } from 'react-icons/si';
+import TextScrambler from "react-scramble-text";
 
 const HeroData = {
     heading: "Hire Me",
@@ -23,7 +24,7 @@ const HeroData = {
     firstWidget: {
         title: "Coding : REACT",
         codes: ["HTML", "CSS", "JAVASCRIPT"],
-        level: "80%"
+        level: "97%"
     },
 
     secondWidget: {
@@ -36,13 +37,14 @@ const HeroData = {
         title: "BACK-END",
         codes: ["NODE", "EXPRESS", "FIREBASE", "CMS"],
         level: "70%"
-    }
+    },
+    scramble: ["JAVASCRIPT", "NODE", "EXPRESS"]
 };
 
 
 const HeroSection = () => {
 
-    const { heading, icons, link, btn, firstWidget, secondWidget, thirdWidget } = HeroData;
+    const { heading, icons, link, btn, firstWidget, secondWidget, thirdWidget, scramble } = HeroData;
 
     return (
         <>
@@ -75,11 +77,18 @@ const HeroSection = () => {
                 <Grid item xs={12} md={5}>
 
                     {/* 1st Widget */}
-                    <HomeWidget heading={firstWidget.title} percentage={firstWidget.level} widget={firstWidget} />
+                    <HomeWidget
+                        heading={<Typography sx={{color: "red"}}><TextScrambler phrases={scramble} speed={50} pauseTime={2000} /></Typography>}
+                        percentage={firstWidget.level}
+                        widget={firstWidget} >
+                        {<Typography >CODING: </Typography>}
+                    </HomeWidget>
+
                     <Divider />
 
                     {/* 2nd Widget */}
                     <HomeWidget heading={secondWidget.title} percentage={secondWidget.level} widget={secondWidget} />
+
                     <Divider />
 
                     {/* 3rd Widget */}
@@ -96,7 +105,7 @@ export default HeroSection;
 
 
 // Left Widget Component 
-const HomeWidget = ({ heading, percentage, widget }) => {
+const HomeWidget = ({ heading, percentage, widget, children }) => {
 
     const { codes } = widget;
 
@@ -113,9 +122,10 @@ const HomeWidget = ({ heading, percentage, widget }) => {
 
             <Grid container>
                 <Grid item xs={7}>
-                    <Typography variant='h5'>
+                    <Stack direction='row' spacing={2}>
+                        {children}
                         {heading}
-                    </Typography>
+                    </Stack>
                 </Grid>
                 <Grid item xs={5}>
                     <Typography align={matches ? 'center' : 'right'} variant='h5'>
