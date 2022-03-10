@@ -12,11 +12,11 @@ const HeroData = {
     icons: [
         {
             name: <SiGithub />,
-            link: "https://www.google.com"
+            link: "https://github.com/Holuwashina"
         },
         {
             name: <SiLinkedin />,
-            link: "https://www.google.com"
+            link: "https://www.linkedin.com/in/hamzat-oluwashina-681986169"
         }
     ],
 

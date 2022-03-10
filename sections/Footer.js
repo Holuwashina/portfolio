@@ -4,6 +4,7 @@ import { useTheme } from "@mui/material/styles";
 import { Container, Box, Divider, Typography, Paper, IconButton, Stack, Button, Fade, MobileStepper } from "@mui/material";
 import { KeyboardArrowLeft, KeyboardArrowRight } from "@mui/icons-material";
 import { AiOutlineLinkedin } from "react-icons/ai";
+import { BiMailSend } from "react-icons/bi";
 import { RiFacebookCircleLine, RiGithubLine, RiTwitterLine, RiWhatsappLine, RiMessengerLine } from "react-icons/ri";
 import footerImage from "../public/images/footer.svg";
 
@@ -28,37 +29,38 @@ function Footer() {
 		contactIcons: [
 			{
 				icon: <RiMessengerLine />,
-				link: "https://www.google.com"
+				link: "https://m.me/holuwashina"
 			},
 			{
 				icon: <RiTwitterLine />,
-				link: "https://www.google.com"
+				link: "https://twitter.com/messages/compose?recipient_id=318116334&text=Hello%20Zhine"
+
 			},
 			{
 				icon: <RiWhatsappLine />,
-				link: "https://www.google.com"
+				link: "https://wa.me/+2348062820377/?text=Hello Zhine"
 			},
 			{
-				icon: <AiOutlineLinkedin />,
-				link: "https://www.google.com"
+				icon: <BiMailSend />,
+				link: "mailto:hamzatholuwashina@gmail.com?subject=Hire"
 			}
 		],
 		followIcons: [
 			{
 				icon: <RiGithubLine />,
-				link: "https://www.google.com"
+				link: "https://github.com/Holuwashina"
 			},
 			{
 				icon: <AiOutlineLinkedin />,
-				link: "https://www.google.com"
+				link: "https://www.linkedin.com/in/hamzat-oluwashina-681986169"
 			},
 			{
 				icon: <RiTwitterLine />,
-				link: "https://www.google.com"
+				link: "https://mobile.twitter.com/itz_zhine"
 			},
 			{
 				icon: <RiFacebookCircleLine />,
-				link: "https://www.google.com"
+				link: "https://m.facebook.com/holuwashina"
 			}
 		],
 		footerBtn: [
@@ -124,11 +126,9 @@ function Footer() {
 						{id === "connect" && followIcons.map((follow) => {
 							return (
 								<React.Fragment key={follow.icon}>
-									<a href={follow.link} target="_blank" rel="noopener noreferrer">
-										<IconButton size="small" color="primary">
+										<IconButton href={follow.link} target="_blank" rel="noopener noreferrer" size="small" color="primary">
 											{follow.icon}
 										</IconButton>
-									</a>
 								</React.Fragment>
 							)
 						})

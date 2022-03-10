@@ -36,7 +36,16 @@ function Header() {
       text: "Have a project for me?",
       mode: "DARK MODE",
 
-      icons: [<BiPhoneCall />, <BiMailSend />]
+      icons: [
+        {
+          icon: <BiPhoneCall />,
+          link: "tel:+2348062820377"
+        },
+        {
+          icon: <BiMailSend />,
+          link: "mailto:hamzatholuwashina@gmail.com?subject=Hire"
+        }
+      ]
     }
   }
 
@@ -126,11 +135,13 @@ function Header() {
             justifyContent='center'
           >
             {
-              icons.map((icon,index) => {
+              icons.map((data, index) => {
                 return (
-                  <IconButton color="primary" key={index} onClick={handleClose} size='small'>
-                    {icon}
-                  </IconButton>
+                  <React.Fragment key={index}>
+                    <IconButton href={data.link} target="_blank" rel="noopener noreferrer" size="small" color="primary">
+                      {data.icon}
+                    </IconButton>
+                  </React.Fragment>
                 )
               })
             }
