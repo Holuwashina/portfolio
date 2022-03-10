@@ -151,12 +151,12 @@ export default Footer;
 
 const steps = [
 	{
-		question: "Can you work with a team of developers?",
+		question: "Can you work with a team of developers ?",
 		answer: `Yes, I can join a team of experienced developer to brainstorm and work on a project with 
             great vision.`,
 	},
 	{
-		question: "Can you work full time with a company / organization ?",
+		question: "Can you work full time with a company ?",
 		answer: `Yes, I can work with any organization in any peaceful country, as i love to explore.`,
 	},
 	{

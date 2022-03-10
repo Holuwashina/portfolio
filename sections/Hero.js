@@ -40,7 +40,7 @@ const HeroData = {
 };
 
 
-const Hero = () => {
+const HeroSection = () => {
 
     const { heading, icons, link, btn, firstWidget, secondWidget, thirdWidget } = HeroData;
 
@@ -92,7 +92,7 @@ const Hero = () => {
     )
 }
 
-export default Hero;
+export default HeroSection;
 
 
 // Left Widget Component 

@@ -56,6 +56,10 @@ function Header() {
     setAnchorEl(null);
   };
 
+  const handleMode = (event) => {
+    console.log(event.target.value)
+  };
+
   return (
     <AppBar>
       <Toolbar>
@@ -87,21 +91,21 @@ function Header() {
           }
         </Stack>
 
-          <IconButton
-            id='basic-button'
-            ariacontrols='basic-menu'
-            ariahaspopup='true'
-            ariaexpanded={open ? 'true' : undefined}
-            onClick={handleClick}
+        <IconButton
+          id='basic-button'
+          ariacontrols='basic-menu'
+          ariahaspopup='true'
+          ariaexpanded={open ? 'true' : undefined}
+          onClick={handleClick}
+        >
+          <StyledBadge
+            overlap='circular'
+            anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
+            variant='dot'
           >
-            <StyledBadge
-              overlap='circular'
-              anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
-              variant='dot'
-            >
-              <Avatar alt={name} src={`/images/${img}`} />
-            </StyledBadge>
-          </IconButton>
+            <Avatar alt={name} src={`/images/${img}`} />
+          </StyledBadge>
+        </IconButton>
 
         <Menu
           id='basic-menu'
@@ -122,9 +126,9 @@ function Header() {
             justifyContent='center'
           >
             {
-              icons.map((icon) => {
+              icons.map((icon,index) => {
                 return (
-                  <IconButton color="primary" key={icon} onClick={handleClose} size='small'>
+                  <IconButton color="primary" key={index} onClick={handleClose} size='small'>
                     {icon}
                   </IconButton>
                 )
@@ -133,7 +137,7 @@ function Header() {
           </Stack>
           <Divider />
           <Box sx={{ textAlign: 'center' }}>
-            <Switch {...label} size='small' />
+            <Switch onChange={handleMode} {...label} size='small' />
             <Typography variant='body2' sx={{ marginTop: '-3px' }}>
               {mode}
             </Typography>
@@ -146,21 +150,21 @@ function Header() {
 export default Header;
 
 
-const LinkWidget = ({children, name, path}) => {
-    return (
-        <>
-            <Link href={path}>
-                <Box sx={{ textAlign: 'center', cursor: "pointer" }}>
-                    <IconButton color="inherit" size='small'>
-                        {children}
-                    </IconButton>
-                    <Typography variant='body2' sx={{ marginTop: '-3px' }}>
-                        {name}
-                    </Typography>
-                </Box>
-            </Link>
-        </>
-    )
+const LinkWidget = ({ children, name, path }) => {
+  return (
+    <>
+      <Link href={path}>
+        <Box sx={{ textAlign: 'center', cursor: "pointer" }}>
+          <IconButton color="inherit" size='small'>
+            {children}
+          </IconButton>
+          <Typography variant='body2' sx={{ marginTop: '-3px' }}>
+            {name}
+          </Typography>
+        </Box>
+      </Link>
+    </>
+  )
 }
 
 
