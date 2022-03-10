@@ -68,9 +68,10 @@ const DialogComponent = ({ open, handleClose }) => {
 			open={open}
 			onClose={handleClose}
 			sx={{ mt: 9 }}
+			maxWidth="xs"
 		>
 			<DialogContent>
-				<Stack spacing={2} sx={{ minWidth: 200 }}>
+				<Stack spacing={2}>
 					<FormControl size="small" fullWidth focused>
 						<InputLabel id="simple-select">Category</InputLabel>
 						<Select
