@@ -47,7 +47,6 @@ const Portfolio = () => {
   const [value, setValue] = React.useState(0);
 
   const theme = useTheme()
-  const matches = useMediaQuery(theme.breakpoints.down('md'))
   const smMatches = useMediaQuery(theme.breakpoints.up('md'))
 
 
@@ -55,7 +54,7 @@ const Portfolio = () => {
     <>
       <Grid container spacing={2} >
         <Grid item sm={12} md={6}>
-          <Box sx={{ position: "relative", height: 600, mx:"auto" }}>
+          <Box sx={{ position: "relative", height: 600, mx: "auto" }}>
             <StyledTab tabValue={value} tabSetValue={setValue} tabs={TabData}>
               {
                 TabData.map((tab, index) => {
@@ -90,11 +89,10 @@ const Portfolio = () => {
               />
               <SpeedDialAction
                 icon={<Download />}
-                tooltipTitle="Download CV"
+                                      tooltipTitle="Download CV"
                 tooltipPlacement="bottom"
               />
             </SpeedDial>
-
           </Box>
         </Grid>
         {
@@ -104,7 +102,7 @@ const Portfolio = () => {
               <Image src={sideImage} alt="" width={300} height={300} priority />
             </Box>
           </Grid>
-        }
+        }     
       </Grid>
     </>
   );
@@ -146,19 +144,21 @@ const StyledTab = ({ children, tabs, tabValue, tabSetValue }) => {
   };
 
   return (
-    <>
+    <Box sx={{ maxWidth: { xs: 350, sm: 600 } }}>
       <Tabs
         value={tabValue}
         onChange={handleChange}
         aria-label='basic tabs example'
         variant="scrollable"
+        scrollButtons="auto"
+        allowScrollButtonsMobile
       >
         {
           tabs.map((tab, index) => <Tab key={index} label={tab.name} {...a11yProps(`${tab.id}`)} />)
         }
       </Tabs>
       {children}
-    </>
+    </Box>
   )
 }
 

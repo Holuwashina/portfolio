@@ -24,7 +24,7 @@ function MyApp({ Component, pageProps }) {
         <ThemeProvider theme={theme} >
           <CssBaseline />
           <Header />
-          <Container maxWidth="lg" sx={{ pt: 16, pb: 5 }}>
+          <Container sx={{ pt: 16, pb: 5 }}>
             <Paper elevation={0} >
               <Component {...pageProps} />
             </Paper>
