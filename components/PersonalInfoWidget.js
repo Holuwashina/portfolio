@@ -10,29 +10,30 @@ const PersonalInfoWidget = () => {
             info: "Hamzat Oluwashina"
         },
         {
-            title: "Residence:",
-            info: "Ibadan, Nigeria"
+            title: "Sex:",
+            info: "Male"
+        },
+        {
+            title: "Age:",
+            info: "25 Years"
+        },
+        {
+            title: "Nationality:",
+            info: "Nigeria"
         },
         {
             title: "Current Job:",
             info: "Freelancing"
         },
         {
-            title: "Name:",
-            info: "Hamzat Oluwashina"
-        },
-        {
-            title: "Age:",
-            info: 25
+            title: "Phone:",
+            info: "+2348062820377"
         },
         {
             title: "Language:",
             info: "English"
         },
-        {
-            title: "Sex:",
-            info: "Male"
-        }
+        
     ]
 
     

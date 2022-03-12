@@ -30,13 +30,13 @@ const HeroData = {
     secondWidget: {
         title: "FRONT-END",
         codes: ["REACT", "NEXT", "GATSBY", "ANGULAR"],
-        level: "90%"
+        level: "95%"
     },
 
     thirdWidget: {
         title: "BACK-END",
         codes: ["NODE", "EXPRESS", "FIREBASE", "CMS"],
-        level: "70%"
+        level: "90%"
     },
     scramble: ["JAVASCRIPT", "NODE", "EXPRESS"]
 };
