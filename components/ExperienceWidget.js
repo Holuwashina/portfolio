@@ -29,19 +29,19 @@ const ExperienceData = [
         id: 2,
         contents: [
             {
-                css: "subtitle1",
+                css: "body1",
                 text: "Freelancing"
             },
             {
-                css: "caption",
+                css: "body2",
                 text: "2022 - Present"
             },
             {
-                css: "subtitle1",
+                css: "body1",
                 text: "Series of job related to programming"
             },
             {
-                css: "subtitle1",
+                css: "body1",
                 text: "Development of mobile and web application"
             },
         ]
@@ -59,7 +59,7 @@ const ExperienceWidget = () =>   {
                             <Card sx={{mt: 1}}>
                                 <CardContent>
                                     {
-                                        data.contents.map((content, index) => <Typography key={index} variant={content.css}>{content.text}</Typography>)
+                                        data.contents.map((content, index) => <Typography variant={content.css} key={index}>{content.text}</Typography>)
                                     }
                                 </CardContent>
                             </Card>

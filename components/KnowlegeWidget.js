@@ -48,7 +48,7 @@ const KnowlegeWidget = () => {
                             <ListItemIcon >
                                 {data.icon}
                             </ListItemIcon>
-                            <Typography variant="subtitle1">
+                            <Typography>
                                 <ListItemText disableTypography primary={data.caption} />
                             </Typography>
                         </ListItem>

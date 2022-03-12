@@ -12,9 +12,6 @@
     "@emotion/react": "^11.8.1",
     "@emotion/styled": "^11.8.1",
     "@fontsource/alex-brush": "^4.5.2",
-    "@fontsource/assistant": "^4.5.4",
-    "@fontsource/kanit": "^4.5.2",
-    "@fontsource/leckerli-one": "^4.5.3",
     "@fontsource/roboto": "^4.5.3",
     "@fontsource/squada-one": "^4.5.2",
     "@mui/icons-material": "^5.4.4",
@@ -24,7 +21,7 @@
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-icons": "^4.3.1",
-    "react-scramble-text": "^1.0.1"
+    "react-simple-typewriter": "^3.0.1"
   },
   "devDependencies": {
     "eslint": "8.10.0",

@@ -3,7 +3,7 @@ import Link from "next/link";
 import { useTheme } from "@mui/styles";
 import { Paper, Grid, Typography, Button, Stack, Divider, IconButton, useMediaQuery } from '@mui/material';
 import { SiGithub, SiLinkedin } from 'react-icons/si';
-import TextScrambler from "react-scramble-text";
+import { Typewriter } from "react-simple-typewriter"
 
 const HeroData = {
     heading: "Hire Me",
@@ -51,8 +51,8 @@ const HeroSection = () => {
             <Grid container spacing={7} sx={{ mb: '80px' }} >
                 {/* Hero Left Text */}
                 <Grid item xs={12} md={7} sx={{ textAlign: 'center' }}>
-                    <Typography variant='h5'>{heading}</Typography>
-                    <Typography variant='body1' gutterBottom>I'm <span style={{ color: "red" }}>OLUWASHINA</span>, a creative, skilled and experienced Web and Mobile application developer from NIGERIA. I design and develop Front-end and implement Back-end using JAVASCRIPT and cutting edge technologies.</Typography>
+                    <Typography variant='h6'>{heading}</Typography>
+                    <Typography gutterBottom>I'm <span style={{ color: "red" }}>OLUWASHINA</span>, a creative, skilled and experienced Web and Mobile application developer from NIGERIA. I design and develop Front-end and implement Back-end using JAVASCRIPT and cutting edge technologies.</Typography>
 
                     <Stack direction='row' spacing={1} justifyContent='center' mb={2}>
                         {
@@ -68,7 +68,7 @@ const HeroSection = () => {
                         }
                     </Stack>
 
-                    <Link href={link} passHref>
+                    <Link href={link}>
                         <Button variant='contained'>{btn}</Button>
                     </Link>
                 </Grid>
@@ -78,7 +78,7 @@ const HeroSection = () => {
 
                     {/* 1st Widget */}
                     <HomeWidget
-                        heading={<Typography sx={{color: "red"}}><TextScrambler phrases={scramble} speed={50} pauseTime={2000} /></Typography>}
+                        heading={<Typography sx={{ color: "red", textTransform: "uppercase" }}><Typewriter words={scramble} loop={1000}></Typewriter></Typography>}
                         percentage={firstWidget.level}
                         widget={firstWidget} >
                         {<Typography >CODING: </Typography>}
@@ -116,7 +116,7 @@ const HomeWidget = ({ heading, percentage, widget, children }) => {
         <Paper elevation={0} sx={{ mt: 1, mb: 1 }}>
             <Stack direction='row' spacing={2}>
                 {
-                    codes.map((code, index) => <Typography key={index} variant='body2'>{code}</Typography>)
+                    codes.map((code, index) => <Typography variant="body2" key={index}>{code}</Typography>)
                 }
             </Stack>
 
@@ -128,7 +128,7 @@ const HomeWidget = ({ heading, percentage, widget, children }) => {
                     </Stack>
                 </Grid>
                 <Grid item xs={5}>
-                    <Typography align={matches ? 'center' : 'right'} variant='h5'>
+                    <Typography align={matches ? 'center' : 'right'}>
                         {percentage}
                     </Typography>
                 </Grid>

@@ -114,7 +114,7 @@ const SkillWidget = () => {
                 SkillData.map((skill, index) => {
                     return (
                         <Grid key={index} item xs={12} sx={{ mt: "15px" }}>
-                            <Typography variant='subtitle1'>{skill.title}</Typography>
+                            <Typography>{skill.title}</Typography>
                             {
                                 skill.chip.map((data, index) => <Chip key={index} icon={data.icon} label={data.title} color="primary" variant="outlined" sx={{ m: "10px 0 0 10px" }} />)
                             }

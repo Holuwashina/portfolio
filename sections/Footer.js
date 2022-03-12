@@ -138,7 +138,7 @@ function Footer() {
 			</Fade>
 
 			<Box sx={{ textAlign: "center" }}>
-				<Typography gutterBottom variant="subtitle1" sx={{ mb: 2, mt: 2 }}>
+				<Typography gutterBottom sx={{ mb: 2, mt: 2 }}>
 					[ Code Elegant ]
 				</Typography>
 				<Typography variant="h4">{logo}</Typography>
@@ -182,7 +182,7 @@ export function TextMobileStepper() {
 		<Fade in timeout={750}>
 			<Paper>
 				<Divider sx={{ pb: 3, pt: 2 }}>
-					<Typography variant="h5" textAlign="center">
+					<Typography variant="h6" textAlign="center">
 						ABOUT ME
 					</Typography>
 				</Divider>

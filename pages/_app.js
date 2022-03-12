@@ -1,11 +1,16 @@
+import * as React from 'react';
 import Head from 'next/head';
 import Header from '../sections/Header';
 import Footer from '../sections/Footer';
 import { ThemeProvider } from "@mui/material/styles";
-import theme from "../assets/styles/appTheme";
 import { CssBaseline, Paper, Container } from '@mui/material';
+import { ColorModeContext } from "../assets/styles/appTheme";
+import ToggleColorMode from "../assets/styles/appTheme"
+
 
 function MyApp({ Component, pageProps }) {
+
+  const { colorMode, theme } = ToggleColorMode()
 
   return (
     <>
@@ -15,16 +20,18 @@ function MyApp({ Component, pageProps }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <ThemeProvider theme={theme} >
-        <CssBaseline />
-        <Header />
-        <Container maxWidth="lg" sx={{ pt: 16, pb: 5 }}>
-        <Paper elevation={0} >
-          <Component {...pageProps} />
-        </Paper>
-        </Container>
-        <Footer />
-      </ThemeProvider>
+      <ColorModeContext.Provider value={colorMode}>
+        <ThemeProvider theme={theme} >
+          <CssBaseline />
+          <Header />
+          <Container maxWidth="lg" sx={{ pt: 16, pb: 5 }}>
+            <Paper elevation={0} >
+              <Component {...pageProps} />
+            </Paper>
+          </Container>
+          <Footer />
+        </ThemeProvider>
+      </ColorModeContext.Provider>
     </>
   )
 }

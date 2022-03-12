@@ -42,8 +42,8 @@ const PersonalInfoWidget = () => {
                 PersonalInfoData.map((data, index) => {
                     return (
                         <Grid key={index} item xs={6}>
-                            <Typography variant='subtitle1'>{data.title}</Typography>
-                            <Typography variant='subtitle2'>{data.info}</Typography>
+                            <Typography>{data.title}</Typography>
+                            <Typography sx={{color: "red"}}>{data.info}</Typography>
                         </Grid>
                     )
                 })

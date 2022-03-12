@@ -62,7 +62,7 @@ const Portfolio = () => {
                   return (
                     <React.Fragment key={index}>
                       <TabPanel value={value} index={tab.id}>
-                        <Typography gutterBottom variant='h5'>{tab.heading}</Typography>
+                        <Typography gutterBottom variant='h6'>{tab.heading}</Typography>
                         <Divider />
                         {
                           value === 0 && <PersonalInfoWidget /> ||

@@ -1,11 +1,15 @@
 import * as React from 'react';
 import Link from "next/link";
 import { styled } from '@mui/material/styles';
-import { AppBar, Box, Badge, Avatar, Switch, Toolbar, Divider, Typography, Menu, Stack, IconButton } from '@mui/material';
+import { AppBar, Box, Badge, Avatar, Toolbar, Divider, Typography, Menu, Stack, IconButton } from '@mui/material';
 import Home from '@mui/icons-material/Home';
 import Folder from '@mui/icons-material/Folder';
 import StyleIcon from '@mui/icons-material/Style';
 import { BiMailSend, BiPhoneCall } from 'react-icons/bi';
+import { useTheme } from '@mui/material/styles';
+import Brightness4Icon from '@mui/icons-material/Brightness4';
+import Brightness7Icon from '@mui/icons-material/Brightness7';
+import { ColorModeContext } from "../assets/styles/appTheme"
 
 function Header() {
 
@@ -14,17 +18,17 @@ function Header() {
 
     menus: [
       {
-        name: "HOME",
+        name: "Home",
         path: "/",
         icon: <Home />
       },
       {
-        name: "RESUME",
+        name: "Resume",
         path: "resume",
         icon: <Folder />
       },
       {
-        name: "PORTFOLIO",
+        name: "Portfolio",
         path: "portfolio",
         icon: <StyleIcon />
       }
@@ -34,7 +38,6 @@ function Header() {
       name: "Zhine",
       img: "zhine.png",
       text: "Have a project for me?",
-      mode: "DARK MODE",
 
       icons: [
         {
@@ -50,7 +53,7 @@ function Header() {
   }
 
   const { logo, menus, avatar } = HeaderData;
-  const { name, img, text, mode, icons } = avatar
+  const { name, img, text, icons } = avatar
 
   const label = { inputProps: { 'aria-label': 'Switch demo' } };
 
@@ -65,9 +68,9 @@ function Header() {
     setAnchorEl(null);
   };
 
-  const handleMode = (event) => {
-    console.log(event.target.value)
-  };
+  const theme = useTheme();
+  const colorMode = React.useContext(ColorModeContext);
+
 
   return (
     <AppBar>
@@ -125,7 +128,7 @@ function Header() {
           sx={{ top: '10px' }}
         >
 
-          <Typography sx={{ margin: '10px', fontSize: '0.8rem' }}>
+          <Typography sx={{ margin: '10px' }}>
             {text}
           </Typography>
           <Stack
@@ -148,10 +151,10 @@ function Header() {
           </Stack>
           <Divider />
           <Box sx={{ textAlign: 'center' }}>
-            <Switch onChange={handleMode} {...label} size='small' />
-            <Typography variant='body2' sx={{ marginTop: '-3px' }}>
-              {mode}
-            </Typography>
+            {theme.palette.mode} mode
+            <IconButton sx={{ ml: 1 }} onClick={colorMode.toggleColorMode} color="inherit">
+              {theme.palette.mode === 'dark' ? <Brightness7Icon /> : <Brightness4Icon />}
+            </IconButton>
           </Box>
         </Menu>
       </Toolbar>
@@ -169,7 +172,7 @@ const LinkWidget = ({ children, name, path }) => {
           <IconButton color="inherit" size='small'>
             {children}
           </IconButton>
-          <Typography variant='body2' sx={{ marginTop: '-3px' }}>
+          <Typography variant="body2" sx={{ marginTop: '-4px' }}>
             {name}
           </Typography>
         </Box>
