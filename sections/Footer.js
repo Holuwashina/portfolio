@@ -111,9 +111,9 @@ function Footer() {
 			<Fade in timeout={750}>
 				<Box sx={{ height: 30 }}>
 					<Stack direction="row" spacing={1} justifyContent="center">
-						{id === "contact" && contactIcons.map((contact) => {
+						{id === "contact" && contactIcons.map((contact, index) => {
 							return (
-								<React.Fragment key={contact.icon}>
+								<React.Fragment key={index}>
 									<a href={contact.link} target="_blank" rel="noopener noreferrer">
 										<IconButton size="small" color="primary">
 											{contact.icon}
@@ -123,9 +123,9 @@ function Footer() {
 							)
 						})
 						}
-						{id === "connect" && followIcons.map((follow) => {
+						{id === "connect" && followIcons.map((follow, index) => {
 							return (
-								<React.Fragment key={follow.icon}>
+								<React.Fragment key={index}>
 										<IconButton href={follow.link} target="_blank" rel="noopener noreferrer" size="small" color="primary">
 											{follow.icon}
 										</IconButton>
