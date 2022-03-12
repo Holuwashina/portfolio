@@ -43,7 +43,7 @@ const PersonalInfoWidget = () => {
                     return (
                         <Grid key={index} item xs={6}>
                             <Typography>{data.title}</Typography>
-                            <Typography sx={{color: "red"}}>{data.info}</Typography>
+                            <Typography variant="body2">{data.info}</Typography>
                         </Grid>
                     )
                 })

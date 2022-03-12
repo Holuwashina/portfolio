@@ -189,7 +189,7 @@ export function TextMobileStepper() {
 				<Typography textAlign="left" sx={{ ml: 3 }}>
 					{steps[activeStep].question}
 				</Typography>
-				<Box textAlign="left" sx={{ height: 100, width: "100%", p: 3 }}>
+				<Box textAlign="left" sx={{ height: 110, width: "100%", p: 3 }}>
 					{steps[activeStep].answer}
 				</Box>
 				<MobileStepper

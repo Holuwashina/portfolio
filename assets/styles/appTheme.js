@@ -26,14 +26,14 @@ export default function ToggleColorMode() {
                 palette: {
                     mode,
                     primary: {
-                        main: "#1a237e",
-                        light: "#534bae",
-                        dark: "#000051"
-                    },
-                    secondary: {
                         main: "#6a1b9a",
                         light: "#9c4dcc",
                         dark: "#38006b"
+                    },
+                    secondary: {
+                        main: "#1a237e",
+                        light: "#534bae",
+                        dark: "#000051"
                     }
                 },
                 typography: {
