@@ -3,9 +3,6 @@ import { createTheme } from "@mui/material/styles"
 import "@fontsource/alex-brush"
 import "@fontsource/roboto"
 import "@fontsource/squada-one"
-import "@fontsource/leckerli-one"
-import "@fontsource/assistant"
-
 
 
 // Create Context
