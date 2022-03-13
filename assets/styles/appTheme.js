@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { createTheme } from "@mui/material/styles"
-import "@fontsource/alex-brush"
-import "@fontsource/roboto"
-import "@fontsource/squada-one"
+// import "@fontsource/alex-brush"
+// import "@fontsource/roboto"
+// import "@fontsource/squada-one"
 
 
 // Create Context
@@ -44,7 +44,7 @@ export default function ToggleColorMode() {
                         textTransform: "uppercase"
                     },
                     h4: {
-                        fontFamily: ["Alex brush", "Segoe UI", "Roboto"].join(","),
+                        fontFamily: ["Alex brush", cursive, "Segoe UI", "Roboto"].join(","),
                     },
                     button: {
                         fontSize: "0.7rem",

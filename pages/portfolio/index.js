@@ -14,18 +14,6 @@ const ServicesData = {
 			severity: "info",
 			img: "project1.png",
 		},
-		// {
-		// 	id: 2,
-		// 	type: "Crypto",
-		// 	progress: "Completed",
-		// 	img: "dwt.svg",
-		// },
-		// {
-		// 	id: 3,
-		// 	type: "E - Commerce",
-		// 	progress: "In-progress",
-		// 	img: "gb.svg",
-		// },
 	]
 }
 
@@ -60,7 +48,7 @@ function Portfolio() {
 		<>
 			<Button endIcon={<BsFilterLeft />} onClick={handleClickOpen}>Filter</Button>
 			<Services heading={heading} serviceCard={serviceCard} handleProjectClick={handleProjectLink} />
-			<DialogComponent open={open} handleClose={handleClose} handleFilter={handleFilter} filter={filter}/>
+			<DialogComponent open={open} handleClose={handleClose} handleFilter={handleFilter} filter={filter} />
 		</>
 	);
 }
@@ -106,7 +94,7 @@ const DialogComponent = ({ open, handleClose, handleFilter, filter }) => {
 						</RadioGroup>
 					</FormControl>
 				</Stack>
-				<Typography variant="body2" align="center" sx={{color: "red"}}>{filter}</Typography>
+				<Typography variant="body2" align="center" sx={{ color: "red" }}>{filter}</Typography>
 			</DialogContent>
 			<DialogActions>
 				<Button onClick={handleFilter}>Filter</Button>
