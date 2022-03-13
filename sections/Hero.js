@@ -24,7 +24,6 @@ const HeroData = {
     firstWidget: {
         title: "Coding : REACT",
         codes: ["HTML", "CSS", "JAVASCRIPT"],
-        level: "97%"
     },
 
     secondWidget: {
@@ -79,7 +78,6 @@ const HeroSection = () => {
                     {/* 1st Widget */}
                     <HomeWidget
                         heading={<Typography sx={{ color: "red", textTransform: "uppercase" }}><Typewriter words={scramble} loop={1000}></Typewriter></Typography>}
-                        percentage={firstWidget.level}
                         widget={firstWidget} >
                         {<Typography >CODING: </Typography>}
                     </HomeWidget>

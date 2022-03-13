@@ -44,7 +44,7 @@ export default function ToggleColorMode() {
                         textTransform: "uppercase"
                     },
                     h4: {
-                        fontFamily: ["Alex brush", cursive, "Segoe UI", "Roboto"].join(","),
+                        fontFamily: ["Alex brush", "cursive", "Segoe UI", "Roboto"].join(","),
                     },
                     button: {
                         fontSize: "0.7rem",
