@@ -47,11 +47,7 @@ export default function ToggleColorMode() {
                         fontSize: "0.7rem",
                         letterSpacing: "0.08em",
                     },
-
                 },
-                components: {
-
-                }
             }),
         [mode],
     );

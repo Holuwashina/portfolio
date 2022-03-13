@@ -1,21 +1,8 @@
 import Typography from '@mui/material/Typography';
-import Grid from '@mui/material/Grid';
-import { SiTypescript } from 'react-icons/si';
-import { SiHtml5 } from 'react-icons/si';
-import { SiCss3 } from 'react-icons/si';
-import { SiJavascript } from 'react-icons/si';
-import { SiReact } from 'react-icons/si';
-import { SiNextdotjs } from 'react-icons/si';
-import { SiGatsby } from 'react-icons/si';
-import { SiAngular } from 'react-icons/si';
-import { SiVuedotjs } from 'react-icons/si';
+import { Grid, Chip } from '@mui/material';
+import { SiTypescript, SiHtml5, SiCss3, SiJavascript, SiReact, SiNextdotjs, SiGatsby, SiAngular, SiVuedotjs, SiIos, SiMaterialui, SiBootstrap, SiChakraui } from 'react-icons/si';
 import { CgWebsite } from 'react-icons/cg';
 import { DiAndroid } from 'react-icons/di';
-import { SiIos } from 'react-icons/si';
-import { SiMaterialui } from 'react-icons/si';
-import { SiBootstrap } from 'react-icons/si';
-import { SiChakraui } from 'react-icons/si';
-import Chip from '@mui/material/Chip';
 
 const SkillData = [
     {

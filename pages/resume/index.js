@@ -7,8 +7,8 @@ import SkillWidget from '../../components/SkillWidget';
 import EducationWidget from '../../components/EducationWidget';
 import KnowlegeWidget from '../../components/KnowlegeWidget';
 import ExperienceWidget from '../../components/ExperienceWidget';
-import PersonalInfoWidget from "../../components/PersonalInfoWidget"
-import sideImage from "../../public/images/side.svg"
+import PersonalInfoWidget from "../../components/PersonalInfoWidget";
+import sideImage from "../../public/images/side.svg";
 import FileCopyIcon from '@mui/icons-material/FileCopyOutlined';
 import Download from '@mui/icons-material/Download';
 
