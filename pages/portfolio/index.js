@@ -90,7 +90,7 @@ const DialogComponent = ({ open, handleClose, handleFilter, filter }) => {
 						<FormLabel id="simple-radio-button">Project Progress</FormLabel>
 						<RadioGroup row aria-labelledby="simple-radio-button" name="row-radio-button">
 							<FormControlLabel value="In-progress" control={<Radio size="small" />} label="In-progress" />
-							<FormControlLabel value="Completed" control={<Radio size="small" />} label="Complete" />
+							<FormControlLabel value="Completed" control={<Radio size="small" />} label="Completed" />
 						</RadioGroup>
 					</FormControl>
 				</Stack>
