@@ -3,7 +3,7 @@ import Link from "next/link";
 import { useTheme } from "@mui/styles";
 import { Paper, Grid, Typography, Button, Stack, Divider, IconButton, useMediaQuery } from '@mui/material';
 import { SiGithub, SiLinkedin } from 'react-icons/si';
-import { Typewriter } from "react-simple-typewriter"
+import { Typewriter } from "react-simple-typewriter";
 
 const HeroData = {
     heading: "Hire Me",

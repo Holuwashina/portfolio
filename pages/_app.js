@@ -5,7 +5,7 @@ import Footer from '../sections/Footer';
 import { ThemeProvider } from "@mui/material/styles";
 import { CssBaseline, Paper, Container } from '@mui/material';
 import { ColorModeContext } from "../assets/styles/appTheme";
-import ToggleColorMode from "../assets/styles/appTheme"
+import ToggleColorMode from "../assets/styles/appTheme";
 
 
 function MyApp({ Component, pageProps }) {
@@ -17,7 +17,7 @@ function MyApp({ Component, pageProps }) {
       <Head>
         <title>Portfolio</title>
         <meta name="description" content="Zhine portfolio" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.png" />
       </Head>
 
       <ColorModeContext.Provider value={colorMode}>
