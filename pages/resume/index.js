@@ -1,23 +1,33 @@
-import * as React from 'react';
-import PropTypes from 'prop-types';
-import Image from 'next/image';
+import * as React from "react";
+import PropTypes from "prop-types";
+import Image from "next/image";
 import { useTheme } from "@mui/styles";
-import { Typography, Box, Grid, Divider, Tab, Tabs, SpeedDialAction, SpeedDial, SpeedDialIcon, useMediaQuery } from '@mui/material';
-import SkillWidget from '../../components/SkillWidget';
-import EducationWidget from '../../components/EducationWidget';
-import KnowlegeWidget from '../../components/KnowlegeWidget';
-import ExperienceWidget from '../../components/ExperienceWidget';
+import {
+  Typography,
+  Box,
+  Grid,
+  Divider,
+  Tab,
+  Tabs,
+  SpeedDialAction,
+  SpeedDial,
+  SpeedDialIcon,
+  useMediaQuery,
+} from "@mui/material";
+import SkillWidget from "../../components/SkillWidget";
+import EducationWidget from "../../components/EducationWidget";
+import KnowlegeWidget from "../../components/KnowlegeWidget";
+import ExperienceWidget from "../../components/ExperienceWidget";
 import PersonalInfoWidget from "../../components/PersonalInfoWidget";
 import sideImage from "../../public/images/side.svg";
-import FileCopyIcon from '@mui/icons-material/FileCopyOutlined';
-import Download from '@mui/icons-material/Download';
+import FileCopyIcon from "@mui/icons-material/FileCopyOutlined";
+import Download from "@mui/icons-material/Download";
 
 const TabData = [
   {
     id: 0,
     name: "Information",
     heading: "Personal Information",
-
   },
   {
     id: 1,
@@ -39,42 +49,49 @@ const TabData = [
     name: "Experience",
     heading: "Experience",
   },
-]
-
+];
 
 const Portfolio = () => {
-
   const [value, setValue] = React.useState(0);
 
-  const theme = useTheme()
-  const smMatches = useMediaQuery(theme.breakpoints.up('md'))
+  const theme = useTheme();
+  const smMatches = useMediaQuery(theme.breakpoints.up("md"));
 
+  const handleShare = async () => {
+    console.log("button clicked")
+    if (navigator.share) {
+      try {
+        await navigator.share("a")
+        console.log("data shared")
+      } catch (error) {
+        console.log(error)        
+      }
+    }
+  }
 
   return (
     <>
-      <Grid container spacing={2} >
+      <Grid container spacing={2}>
         <Grid item sm={12} md={6}>
           <Box sx={{ position: "relative", height: 600, mx: "auto" }}>
             <StyledTab tabValue={value} tabSetValue={setValue} tabs={TabData}>
-              {
-                TabData.map((tab, index) => {
-                  return (
-                    <React.Fragment key={index}>
-                      <TabPanel value={value} index={tab.id}>
-                        <Typography gutterBottom variant='h6'>{tab.heading}</Typography>
-                        <Divider />
-                        {
-                          value === 0 && <PersonalInfoWidget /> ||
-                          value === 1 && <EducationWidget /> ||
-                          value === 2 && <KnowlegeWidget /> ||
-                          value === 3 && <SkillWidget /> ||
-                          value === 4 && <ExperienceWidget />
-                        }
-                      </TabPanel>
-                    </React.Fragment>
-                  )
-                })
-              }
+              {TabData.map((tab, index) => {
+                return (
+                  <React.Fragment key={index}>
+                    <TabPanel value={value} index={tab.id}>
+                      <Typography gutterBottom variant="h6">
+                        {tab.heading}
+                      </Typography>
+                      <Divider />
+                      {(value === 0 && <PersonalInfoWidget />) ||
+                        (value === 1 && <EducationWidget />) ||
+                        (value === 2 && <KnowlegeWidget />) ||
+                        (value === 3 && <SkillWidget />) ||
+                        (value === 4 && <ExperienceWidget />)}
+                    </TabPanel>
+                  </React.Fragment>
+                );
+              })}
             </StyledTab>
             <SpeedDial
               ariaLabel="SImpleDial basic example"
@@ -84,51 +101,59 @@ const Portfolio = () => {
             >
               <SpeedDialAction
                 icon={<FileCopyIcon />}
-                tooltipTitle="Copy Link"
+                tooltipTitle="Share Link"
                 tooltipPlacement="bottom"
+                onClick={handleShare}
               />
               <SpeedDialAction
                 icon={<Download />}
-                                      tooltipTitle="Download CV"
+                tooltipTitle="Download CV"
                 tooltipPlacement="bottom"
+                href="/receipt.pdf"
+                download="resume"
               />
             </SpeedDial>
           </Box>
         </Grid>
-        {
-          smMatches &&
-          <Grid item sm={12} md={6} >
-            <Box sx={{ height: 400, display: "flex", alignItems: "flex-end", justifyContent: "center" }}>
-              <Image src={sideImage} alt="" width={300} height={300} priority />
+        {smMatches && (
+          <Grid item sm={12} md={6}>
+            <Box
+              sx={{
+                height: 400,
+                display: "flex",
+                alignItems: "flex-end",
+                justifyContent: "center",
+              }}
+            >
+              <Image
+                src={sideImage}
+                alt="side"
+                width={300}
+                height={300}
+                priority
+              />
             </Box>
           </Grid>
-        }     
+        )}
       </Grid>
     </>
   );
-}
+};
 export default Portfolio;
 
-
 const TabPanel = ({ children, value, index, ...other }) => {
-
   return (
     <div
-      role='tabpanel'
+      role="tabpanel"
       hidden={value !== index}
       id={`simple-tabpanel-${index}`}
       aria-labelledby={`simple-tab-${index}`}
       {...other}
     >
-      {value === index && (
-        <Box sx={{ p: 3 }}>
-          {children}
-        </Box>
-      )}
+      {value === index && <Box sx={{ p: 3 }}>{children}</Box>}
     </div>
   );
-}
-
+};
 
 TabPanel.propTypes = {
   children: PropTypes.node,
@@ -136,9 +161,7 @@ TabPanel.propTypes = {
   value: PropTypes.number.isRequired,
 };
 
-
 const StyledTab = ({ children, tabs, tabValue, tabSetValue }) => {
-
   const handleChange = (event, newValue) => {
     tabSetValue(newValue);
   };
@@ -148,23 +171,23 @@ const StyledTab = ({ children, tabs, tabValue, tabSetValue }) => {
       <Tabs
         value={tabValue}
         onChange={handleChange}
-        aria-label='basic tabs example'
+        aria-label="basic tabs example"
         variant="scrollable"
         scrollButtons="auto"
         allowScrollButtonsMobile
       >
-        {
-          tabs.map((tab, index) => <Tab key={index} label={tab.name} {...a11yProps(`${tab.id}`)} />)
-        }
+        {tabs.map((tab, index) => (
+          <Tab key={index} label={tab.name} {...a11yProps(`${tab.id}`)} />
+        ))}
       </Tabs>
       {children}
     </Box>
-  )
-}
+  );
+};
 
 const a11yProps = (index) => {
   return {
     id: `simple-tab-${index}`,
-    'aria-controls': `simple-tabpanel-${index}`,
+    "aria-controls": `simple-tabpanel-${index}`,
   };
-}
+};

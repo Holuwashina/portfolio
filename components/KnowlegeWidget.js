@@ -7,7 +7,6 @@ import { DiAndroid } from 'react-icons/di';
 import { SiIos } from 'react-icons/si';
 import { FaUserCog } from 'react-icons/fa';
 import { MdOutlineScreenSearchDesktop } from 'react-icons/md';
-import { Typography } from '@mui/material';
 
 const KnowlegeData = [
     {
