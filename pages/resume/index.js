@@ -66,7 +66,7 @@ const Portfolio = () => {
   const handleShare = async () => {
     console.log(window.navigator);
     try {
-      await navigator.share(shareData).then(console.log('data shared'));
+      await navigator.share(shareData);
     } catch (error) {
       console.log(error);
     }
@@ -74,7 +74,7 @@ const Portfolio = () => {
 
   React.useEffect(() => {
     const btn = document.querySelector('#btn');
-    btn.addEventListener('onclick', handleShare);
+    btn.addEventListener('click', handleShare);
   });
 
   return (
