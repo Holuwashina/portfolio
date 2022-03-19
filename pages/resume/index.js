@@ -62,7 +62,7 @@ const Portfolio = () => {
   const smMatches = useMediaQuery(theme.breakpoints.up('md'));
 
   const handleShare = async () => {
-    console.log('button clicked');
+    console.log(window.navigator);
     if (navigator.share) {
       try {
         await navigator.share(shareData).then(console.log('data shared'));
