@@ -104,14 +104,7 @@ const Portfolio = () => {
               sx={{ position: 'absolute', bottom: 3, left: 30 }}
             >
               <SpeedDialAction
-                icon={
-                  <RWebShare
-                    data={{ text: 'CV', url: 'https://', title: 'Portfolio' }}
-                    onClick={() => console.log('Shared Successfully')}
-                  >
-                    <button></button>
-                  </RWebShare>
-                }
+                icon={<FileCopyIcon />}
                 tooltipTitle='Share Link'
                 tooltipPlacement='bottom'
                 // onClick={handleShare}
@@ -124,6 +117,12 @@ const Portfolio = () => {
                 download='resume'
               />
             </SpeedDial>
+            <RWebShare
+              data={{ text: 'CV', url: 'https://', title: 'Portfolio' }}
+              onClick={() => console.log('Shared Successfully')}
+            >
+              <button>the</button>
+            </RWebShare>
           </Box>
         </Grid>
         {smMatches && (
