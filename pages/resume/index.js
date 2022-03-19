@@ -22,6 +22,7 @@ import PersonalInfoWidget from '../../components/PersonalInfoWidget';
 import sideImage from '../../public/images/side.svg';
 import FileCopyIcon from '@mui/icons-material/FileCopyOutlined';
 import Download from '@mui/icons-material/Download';
+import { RWebShare } from 'react-web-share';
 
 const TabData = [
   {
@@ -103,10 +104,17 @@ const Portfolio = () => {
               sx={{ position: 'absolute', bottom: 3, left: 30 }}
             >
               <SpeedDialAction
-                icon={<FileCopyIcon />}
+                icon={
+                  <RWebShare
+                    data={{ text: 'CV', url: 'https://', title: 'Portfolio' }}
+                    onClick={() => console.log('Shared Successfully')}
+                  >
+                    <button></button>
+                  </RWebShare>
+                }
                 tooltipTitle='Share Link'
                 tooltipPlacement='bottom'
-                onClick={handleShare}
+                // onClick={handleShare}
               />
               <SpeedDialAction
                 icon={<Download />}
