@@ -72,6 +72,11 @@ const Portfolio = () => {
     }
   };
 
+  React.useEffect(() => {
+    const btn = document.querySelector('#btn');
+    btn.addEventListener('onclick', handleShare);
+  });
+
   return (
     <>
       <Grid container spacing={2}>
@@ -117,7 +122,7 @@ const Portfolio = () => {
               />
             </SpeedDial>
 
-            <button type='button' onClick={handleShare}>
+            <button id='btn' type='button'>
               the
             </button>
             {/* <RWebShare
