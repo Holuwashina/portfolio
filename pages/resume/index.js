@@ -22,7 +22,6 @@ import PersonalInfoWidget from '../../components/PersonalInfoWidget';
 import sideImage from '../../public/images/side.svg';
 import FileCopyIcon from '@mui/icons-material/FileCopyOutlined';
 import Download from '@mui/icons-material/Download';
-import { RWebShare } from 'react-web-share';
 
 const TabData = [
   {
@@ -63,20 +62,6 @@ const Portfolio = () => {
   const theme = useTheme();
   const smMatches = useMediaQuery(theme.breakpoints.up('md'));
 
-  const handleShare = async () => {
-    console.log(window.navigator);
-    try {
-      await navigator.share(shareData);
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-  React.useEffect(() => {
-    const btn = document.querySelector('#btn');
-    btn.addEventListener('click', handleShare);
-  });
-
   return (
     <>
       <Grid container spacing={2}>
@@ -108,12 +93,6 @@ const Portfolio = () => {
               sx={{ position: 'absolute', bottom: 3, left: 30 }}
             >
               <SpeedDialAction
-                icon={<FileCopyIcon />}
-                tooltipTitle='Share Link'
-                tooltipPlacement='bottom'
-                // onClick={handleShare}
-              />
-              <SpeedDialAction
                 icon={<Download />}
                 tooltipTitle='Download CV'
                 tooltipPlacement='bottom'
@@ -121,15 +100,6 @@ const Portfolio = () => {
                 download='resume'
               />
             </SpeedDial>
-
-            <button id='btn' type='button'>
-              the
-            </button>
-            {/* <RWebShare
-              data={{ text: 'CV', url: 'https://', title: 'Portfolio' }}
-              onClick={() => console.log('Shared Successfully')}
-            >
-            </RWebShare> */}
           </Box>
         </Grid>
         {smMatches && (

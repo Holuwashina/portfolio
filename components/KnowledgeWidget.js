@@ -9,51 +9,46 @@ import { FaUserCog } from 'react-icons/fa';
 import { MdOutlineScreenSearchDesktop } from 'react-icons/md';
 
 const KnowlegeData = [
-    {
-        id: 1,
-        icon: <CgWebsite />,
-        caption: "Web application development",
-    },
-    {
-        id: 2,
-        icon: <DiAndroid />,
-        caption: "Android development",
-    },
-    {
-        id: 3,
-        icon: <SiIos />,
-        caption: "IOS development",
-    },
-    {
-        id: 4,
-        icon: <FaUserCog />,
-        caption: "UI / UX design",
-    },
-    {
-        id: 5,
-        icon: <MdOutlineScreenSearchDesktop />,
-        caption: "Search engine optimization",
-    },
-]
-
+  {
+    id: 1,
+    icon: <CgWebsite />,
+    caption: 'Web application development',
+  },
+  {
+    id: 2,
+    icon: <DiAndroid />,
+    caption: 'Android development',
+  },
+  {
+    id: 3,
+    icon: <SiIos />,
+    caption: 'IOS development',
+  },
+  {
+    id: 4,
+    icon: <FaUserCog />,
+    caption: 'UI / UX design',
+  },
+  {
+    id: 5,
+    icon: <MdOutlineScreenSearchDesktop />,
+    caption: 'Search engine optimization',
+  },
+];
 
 const KnowlegeWidget = () => {
-    return (
-        <List>
-            {
-                KnowlegeData.map((data, index) => {
-                    return (
-                        <ListItem key={index}>
-                            <ListItemIcon >
-                                {data.icon}
-                            </ListItemIcon>
-                                <ListItemText disableTypography primary={data.caption} />
-                        </ListItem>
-                    )
-                })
-            }
-        </List>
-    )
-}
+  return (
+    <List>
+      {KnowlegeData.map((data, index) => {
+        return (
+          <ListItem key={index}>
+            <ListItemIcon>{data.icon}</ListItemIcon>
+            <ListItemText disableTypography primary={data.caption} />
+          </ListItem>
+        );
+      })}
+    </List>
+  );
+};
 
 export default KnowlegeWidget;
