@@ -54,6 +54,7 @@ const TabData = [
 
 const Portfolio = () => {
   const [value, setValue] = React.useState(0);
+
   const shareData = {
     title: 'ZHINE',
     url: 'https://',
@@ -64,12 +65,10 @@ const Portfolio = () => {
 
   const handleShare = async () => {
     console.log(window.navigator);
-    if (navigator.share) {
-      try {
-        await navigator.share(shareData).then(console.log('data shared'));
-      } catch (error) {
-        console.log(error);
-      }
+    try {
+      await navigator.share(shareData).then(console.log('data shared'));
+    } catch (error) {
+      console.log(error);
     }
   };
 
@@ -117,12 +116,15 @@ const Portfolio = () => {
                 download='resume'
               />
             </SpeedDial>
-            <RWebShare
+
+            <button type='button' onClick={handleShare}>
+              the
+            </button>
+            {/* <RWebShare
               data={{ text: 'CV', url: 'https://', title: 'Portfolio' }}
               onClick={() => console.log('Shared Successfully')}
             >
-              <button>the</button>
-            </RWebShare>
+            </RWebShare> */}
           </Box>
         </Grid>
         {smMatches && (
