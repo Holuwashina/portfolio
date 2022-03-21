@@ -96,7 +96,7 @@ const Portfolio = () => {
                 icon={<Download />}
                 tooltipTitle='Download CV'
                 tooltipPlacement='bottom'
-                href='/receipt.pdf'
+                href='/resume.pdf'
                 download='resume'
               />
             </SpeedDial>
