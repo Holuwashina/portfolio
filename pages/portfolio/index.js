@@ -26,7 +26,7 @@ const ServicesData = {
     {
       id: 1,
       type: "Online journal",
-      progress: "completed",
+      progress: "✅",
       severity: "info",
       img: "45530.png",
       url: "https://journals.rectem.edu.ng/index.php",
@@ -34,7 +34,7 @@ const ServicesData = {
     {
       id: 2,
       type: "Find services",
-      progress: "in-progress",
+      progress: "❇️",
       severity: "info",
       img: "1113.png",
       url: "http://hirehelp.vercel.app",

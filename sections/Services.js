@@ -47,7 +47,6 @@ function Services({ serviceCard, heading, imgSize = "100%", url, children }) {
                           sx={{
                             color: "gray",
                             textTransform: "uppercase",
-                            fontSize: "0.8rem",
                           }}
                         >
                           {card.progress}
