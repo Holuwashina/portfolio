@@ -106,8 +106,8 @@ function Footer() {
           <Image
             src={footerImage}
             alt="footer"
-            width={250}
-            height={170}
+            width={200}
+            height={150}
             priority
           />
         )}

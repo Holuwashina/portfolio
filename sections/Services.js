@@ -44,7 +44,11 @@ function Services({ serviceCard, heading, imgSize = "100%", url, children }) {
                         </Typography>
                         <Typography
                           variant="caption"
-                          sx={{ color: "gray", textTransform: "uppercase" }}
+                          sx={{
+                            color: "gray",
+                            textTransform: "uppercase",
+                            fontSize: "0.8rem",
+                          }}
                         >
                           {card.progress}
                         </Typography>

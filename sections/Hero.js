@@ -63,13 +63,17 @@ const HeroSection = () => {
 
   return (
     <>
-      <Grid container spacing={10} sx={{ py: "70px" }}>
+      <Grid
+        container
+        spacing={10}
+        sx={{ justifyContent: "center", py: "70px" }}
+      >
         {/* Hero Left Text */}
-        <Grid item xs={12} md={7} sx={{ textAlign: "center" }}>
+        <Grid item xs={12} md={5} sx={{ textAlign: "center" }}>
           <Typography variant="h5" sx={{ fontWeight: 800 }}>
             {heading}
           </Typography>
-          <Typography gutterBottom sx={{ width: 500, margin: "auto" }}>
+          <Typography gutterBottom>
             I'm <span style={{ color: "red" }}>OLUWASHINA</span>, a creative,
             skilled and experienced Web and Mobile application developer from
             NIGERIA. I design and develop Front-end and implement Back-end using
